@@ -29,6 +29,9 @@ namespace SQliteJPG
             if (dr == System.Windows.Forms.DialogResult.OK)
             {
                 pathname= openFileDialog1.FileName;
+                Bitmap image = new Bitmap(pathname);
+                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                pictureBox1.Image = image;
             }
 
 
