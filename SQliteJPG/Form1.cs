@@ -64,16 +64,16 @@ namespace SQliteJPG
                 cmd.CommandText = sql;
                 cmd.ExecuteNonQuery();
 
+                string name = textBox2.Text;
                 // データを全て削除する
                 //sql = "DELETE FROM sample ";
                 //cmd.CommandText = sql;
                 //cmd.ExecuteNonQuery();
-
                 // ファイルをバイト配列に変換する
                 byte[] file_binary_from = File.ReadAllBytes(pathname);
 
                 // データを挿入する
-                sql = $" INSERT INTO sample VALUES (1,'写真', @file_binary)";
+                sql = $" INSERT INTO sample(no,title,file_binary) VALUES (1,'写真', @file_binary)";
                 cmd.CommandText = sql;
                 cmd.Parameters.Add("@file_binary", DbType.Binary).Value = file_binary_from;
                 cmd.ExecuteNonQuery();
@@ -82,13 +82,20 @@ namespace SQliteJPG
                 sql = $" SELECT * FROM sample ";
                 cmd.CommandText = sql;
                 SQLiteDataReader reader = cmd.ExecuteReader();
-                reader.Read();
+                while (reader.Read() == true)
+                {
+                    textBox1.Text += reader["no"].ToString();
+                    textBox1.Text += " : ";
+                    textBox1.Text += reader["title"].ToString();
+                    textBox1.Text += " : ";
+                    textBox1.Text += "\r\n";
+                    // BLOBのファイルをバイト配列に変換する
+                    byte[] file_binary_to = (byte[])reader["file_binary"];
 
-                // BLOBのファイルをバイト配列に変換する
-                byte[] file_binary_to = (byte[])reader["file_binary"];
+                    // ファイルに書き出す
+                    File.WriteAllBytes(@"C:\temp\image2.jpg", file_binary_to);
+                }
 
-                // ファイルに書き出す
-                File.WriteAllBytes(@"C:\temp\image2.jpg", file_binary_to);
 
             }
             finally
