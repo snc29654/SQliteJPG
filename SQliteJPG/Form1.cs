@@ -60,7 +60,7 @@ namespace SQliteJPG
                 string sql = "";
                 sql += "CREATE TABLE IF NOT EXISTS sample ";
                 sql += "( ";
-                sql += "  no INTEGER NOT NULL, ";
+                sql += "  no INTEGER PRIMARY KEY AUTOINCREMENT, ";
                 sql += "  title TEXT, ";
                 sql += "  file_binary BLOB ";
                 sql += ") ";
@@ -75,7 +75,7 @@ namespace SQliteJPG
                 byte[] file_binary_from = File.ReadAllBytes(pathname);
 
                 // データを挿入する
-                sql = $" INSERT INTO sample(no,title,file_binary) VALUES (1,@name, @file_binary)";
+                sql = $" INSERT INTO sample(no,title,file_binary) VALUES (NULL,@name, @file_binary)";
                 cmd.CommandText = sql;
                 cmd.Parameters.Add(new SQLiteParameter("@name", textBox2.Text));
                 cmd.Parameters.Add("@file_binary", DbType.Binary).Value = file_binary_from;
@@ -161,9 +161,9 @@ namespace SQliteJPG
                 //cmd.ExecuteNonQuery();
                 // ファイルをバイト配列に変換する
 
-
+                int number = int.Parse(textBox3.Text);
                 // データを取得する
-                sql = $" SELECT * FROM sample ";
+                sql = $" SELECT * FROM sample WHERE no = " + number;
                 cmd.CommandText = sql;
                 SQLiteDataReader reader = cmd.ExecuteReader();
                 while (reader.Read() == true)
@@ -191,6 +191,83 @@ namespace SQliteJPG
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.Image = image;
             con.Close();
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+
+            // EXEの起動パスを取得する
+            string exePath = System.Windows.Forms.Application.StartupPath;
+
+            // DBフルパスを組みたてる
+            string dbFullPath = System.IO.Path.Combine(exePath, "test.db");
+
+            // 接続先データベースを指定する
+            SQLiteConnection con = new SQLiteConnection(String.Format($"Data Source = {dbFullPath}"));
+
+            DataTable dt = new DataTable();
+
+            DateTime date = DateTime.Now;
+
+            string jpgname = date.ToString("yyyyMMddHHmmss");
+
+            try
+            {
+                // データベースと接続する
+                con.Open();
+
+                // SQLコマンドを宣言する
+                SQLiteCommand cmd = con.CreateCommand();
+
+                // テーブルを作成する
+                string sql = "";
+                sql += "CREATE TABLE IF NOT EXISTS sample ";
+                sql += "( ";
+                sql += "  no INTEGER NOT NULL, ";
+                sql += "  title TEXT, ";
+                sql += "  file_binary BLOB ";
+                sql += ") ";
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+
+                // データを全て削除する
+                //sql = "DELETE FROM sample ";
+                //cmd.CommandText = sql;
+                //cmd.ExecuteNonQuery();
+                // ファイルをバイト配列に変換する
+
+                // データを取得する
+                sql = $" SELECT * FROM sample";
+                cmd.CommandText = sql;
+                SQLiteDataReader reader = cmd.ExecuteReader();
+                while (reader.Read() == true)
+                {
+                    textBox1.Text += reader["no"].ToString();
+                    textBox1.Text += " : ";
+                    textBox1.Text += reader["title"].ToString();
+                    textBox1.Text += " : ";
+                    textBox1.Text += "\r\n";
+                    // BLOBのファイルをバイト配列に変換する
+                    byte[] file_binary_to = (byte[])reader["file_binary"];
+
+                    // ファイルに書き出す
+                    File.WriteAllBytes(@"C:\temp\" + jpgname + @".jpg", file_binary_to);
+                }
+
+
+            }
+            finally
+            {
+                // データベースを切断する
+                con.Close();
+            }
+            Bitmap image = new Bitmap(@"C:\temp\" + jpgname + @".jpg");
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.Image = image;
+            con.Close();
+
 
         }
     }
