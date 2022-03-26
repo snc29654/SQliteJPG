@@ -132,6 +132,10 @@ namespace SQliteJPG
 
             DataTable dt = new DataTable();
 
+            DateTime date = DateTime.Now;
+
+            string jpgname= date.ToString("yyyyMMddHHmmss");
+
             try
             {
                 // データベースと接続する
@@ -173,7 +177,7 @@ namespace SQliteJPG
                     byte[] file_binary_to = (byte[])reader["file_binary"];
 
                     // ファイルに書き出す
-                    File.WriteAllBytes(@"C:\temp\image2.jpg", file_binary_to);
+                    File.WriteAllBytes(@"C:\temp\"+ jpgname + @".jpg", file_binary_to);
                 }
 
 
@@ -183,7 +187,7 @@ namespace SQliteJPG
                 // データベースを切断する
                 con.Close();
             }
-            Bitmap image = new Bitmap(@"C:\temp\image2.jpg");
+            Bitmap image = new Bitmap(@"C:\temp\" + jpgname + @".jpg");
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.Image = image;
             con.Close();
