@@ -93,6 +93,83 @@ namespace SQliteJPG
                     byte[] file_binary_to = (byte[])reader["file_binary"];
 
                     // ファイルに書き出す
+                }
+
+
+            }
+            finally
+            {
+                // データベースを切断する
+                con.Close();
+            }
+            con.Close();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string pathname = "";
+
+
+
+            // EXEの起動パスを取得する
+            string exePath = System.Windows.Forms.Application.StartupPath;
+
+            // DBフルパスを組みたてる
+            string dbFullPath = System.IO.Path.Combine(exePath, "test.db");
+
+            // 接続先データベースを指定する
+            SQLiteConnection con = new SQLiteConnection(String.Format($"Data Source = {dbFullPath}"));
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                // データベースと接続する
+                con.Open();
+
+                // SQLコマンドを宣言する
+                SQLiteCommand cmd = con.CreateCommand();
+
+                // テーブルを作成する
+                string sql = "";
+                sql += "CREATE TABLE IF NOT EXISTS sample ";
+                sql += "( ";
+                sql += "  no INTEGER NOT NULL, ";
+                sql += "  title TEXT, ";
+                sql += "  file_binary BLOB ";
+                sql += ") ";
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+
+                // データを全て削除する
+                //sql = "DELETE FROM sample ";
+                //cmd.CommandText = sql;
+                //cmd.ExecuteNonQuery();
+                // ファイルをバイト配列に変換する
+
+
+                // データを取得する
+                sql = $" SELECT * FROM sample ";
+                cmd.CommandText = sql;
+                SQLiteDataReader reader = cmd.ExecuteReader();
+                while (reader.Read() == true)
+                {
+                    textBox1.Text += reader["no"].ToString();
+                    textBox1.Text += " : ";
+                    textBox1.Text += reader["title"].ToString();
+                    textBox1.Text += " : ";
+                    textBox1.Text += "\r\n";
+                    // BLOBのファイルをバイト配列に変換する
+                    byte[] file_binary_to = (byte[])reader["file_binary"];
+
+                    // ファイルに書き出す
                     File.WriteAllBytes(@"C:\temp\image2.jpg", file_binary_to);
                 }
 
@@ -107,12 +184,6 @@ namespace SQliteJPG
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.Image = image;
             con.Close();
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
 
         }
     }
