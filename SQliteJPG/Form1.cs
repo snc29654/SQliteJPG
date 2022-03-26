@@ -117,8 +117,6 @@ namespace SQliteJPG
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string pathname = "";
-
 
 
             // EXEの起動パスを取得する
@@ -182,6 +180,12 @@ namespace SQliteJPG
 
 
             }
+            catch (Exception)
+            {
+                MessageBox.Show("検索キーが未入力です");
+                return;
+            }
+
             finally
             {
                 // データベースを切断する
@@ -269,6 +273,11 @@ namespace SQliteJPG
             con.Close();
 
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
         }
     }
 }
