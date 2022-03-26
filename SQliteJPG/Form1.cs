@@ -64,7 +64,6 @@ namespace SQliteJPG
                 cmd.CommandText = sql;
                 cmd.ExecuteNonQuery();
 
-                string name = textBox2.Text;
                 // データを全て削除する
                 //sql = "DELETE FROM sample ";
                 //cmd.CommandText = sql;
@@ -73,8 +72,9 @@ namespace SQliteJPG
                 byte[] file_binary_from = File.ReadAllBytes(pathname);
 
                 // データを挿入する
-                sql = $" INSERT INTO sample(no,title,file_binary) VALUES (1,'写真', @file_binary)";
+                sql = $" INSERT INTO sample(no,title,file_binary) VALUES (1,@name, @file_binary)";
                 cmd.CommandText = sql;
+                cmd.Parameters.Add(new SQLiteParameter("@name", textBox2.Text));
                 cmd.Parameters.Add("@file_binary", DbType.Binary).Value = file_binary_from;
                 cmd.ExecuteNonQuery();
 
