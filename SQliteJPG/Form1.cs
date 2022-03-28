@@ -146,7 +146,7 @@ namespace SQliteJPG
                 string sql = "";
                 sql += "CREATE TABLE IF NOT EXISTS sample ";
                 sql += "( ";
-                sql += "  no INTEGER NOT NULL, ";
+                sql += "  no INTEGER PRIMARY KEY AUTOINCREMENT, ";
                 sql += "  title TEXT, ";
                 sql += "  file_binary BLOB ";
                 sql += ") ";
@@ -239,7 +239,7 @@ namespace SQliteJPG
                 string sql = "";
                 sql += "CREATE TABLE IF NOT EXISTS sample ";
                 sql += "( ";
-                sql += "  no INTEGER NOT NULL, ";
+                sql += "  no INTEGER PRIMARY KEY AUTOINCREMENT, ";
                 sql += "  title TEXT, ";
                 sql += "  file_binary BLOB ";
                 sql += ") ";
@@ -336,7 +336,7 @@ namespace SQliteJPG
                 string sql = "";
                 sql += "CREATE TABLE IF NOT EXISTS sample ";
                 sql += "( ";
-                sql += "  no INTEGER NOT NULL, ";
+                sql += "  no INTEGER PRIMARY KEY AUTOINCREMENT, ";
                 sql += "  title TEXT, ";
                 sql += "  file_binary BLOB ";
                 sql += ") ";
