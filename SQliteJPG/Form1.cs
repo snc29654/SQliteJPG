@@ -372,5 +372,77 @@ namespace SQliteJPG
             con.Close();
 
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+
+
+            // EXEの起動パスを取得する
+            string exePath = System.Windows.Forms.Application.StartupPath;
+
+            // DBフルパスを組みたてる
+            string dbFullPath = System.IO.Path.Combine(exePath, "test.db");
+
+            // 接続先データベースを指定する
+            SQLiteConnection con = new SQLiteConnection(String.Format($"Data Source = {dbFullPath}"));
+
+            DataTable dt = new DataTable();
+
+            DateTime date = DateTime.Now;
+
+            string jpgname = date.ToString("yyyyMMddHHmmss");
+
+            try
+            {
+                // データベースと接続する
+                con.Open();
+
+                // SQLコマンドを宣言する
+                SQLiteCommand cmd = con.CreateCommand();
+
+                // テーブルを作成する
+                string sql = "";
+                sql += "CREATE TABLE IF NOT EXISTS sample ";
+                sql += "( ";
+                sql += "  no INTEGER PRIMARY KEY AUTOINCREMENT, ";
+                sql += "  title TEXT, ";
+                sql += "  file_binary BLOB ";
+                sql += ") ";
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+
+                // データを全て削除する
+                //sql = "DELETE FROM sample ";
+                //cmd.CommandText = sql;
+                //cmd.ExecuteNonQuery();
+                // ファイルをバイト配列に変換する
+
+                int number = int.Parse(textBox3.Text);
+                // データを取得する
+
+                sql = $" UPDATE sample SET title = @name WHERE no = " + number; ;
+                cmd.CommandText = sql;
+                cmd.Parameters.Add(new SQLiteParameter("@name", textBox2.Text));
+
+                SQLiteDataReader reader = cmd.ExecuteReader();
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("検索キーが未入力です");
+                return;
+            }
+
+            finally
+            {
+                // データベースを切断する
+                con.Close();
+            }
+            con.Close();
+
+
+        }
     }
 }
