@@ -134,7 +134,6 @@ namespace SQliteJPG
             DateTime date = DateTime.Now;
 
             string jpgname= date.ToString("yyyyMMddHHmmss");
-
             try
             {
                 // データベースと接続する
@@ -165,8 +164,10 @@ namespace SQliteJPG
                 sql = $" SELECT * FROM sample WHERE no = " + number;
                 cmd.CommandText = sql;
                 SQLiteDataReader reader = cmd.ExecuteReader();
+                int count = 0;
                 while (reader.Read() == true)
                 {
+                    count++;
                     textBox1.Text += reader["no"].ToString();
                     textBox1.Text += " : ";
                     textBox1.Text += reader["title"].ToString();
@@ -177,6 +178,13 @@ namespace SQliteJPG
 
                     // ファイルに書き出す
                     File.WriteAllBytes(@"C:\temp\"+ jpgname + @".jpg", file_binary_to);
+                }
+                if (count == 0)
+                {
+
+                    MessageBox.Show("検索NOが存在しません");
+                    return;
+
                 }
 
 
@@ -248,8 +256,10 @@ namespace SQliteJPG
                 sql = $" SELECT * FROM sample";
                 cmd.CommandText = sql;
                 SQLiteDataReader reader = cmd.ExecuteReader();
+                int count = 0;
                 while (reader.Read() == true)
                 {
+                    count++;
                     textBox1.Text += reader["no"].ToString();
                     textBox1.Text += " : ";
                     textBox1.Text += reader["title"].ToString();
@@ -261,7 +271,13 @@ namespace SQliteJPG
                     // ファイルに書き出す
                     File.WriteAllBytes(@"C:\temp\" + jpgname + @".jpg", file_binary_to);
                 }
+                if (count == 0)
+                {
 
+                    MessageBox.Show("DBが空です");
+                    return;
+
+                }
 
             }
             catch (Exception)
