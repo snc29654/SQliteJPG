@@ -117,6 +117,7 @@ namespace SQliteJPG
 
         private void button3_Click(object sender, EventArgs e)
         {
+            textBox1.Clear();
 
 
             // EXEの起動パスを取得する
@@ -200,6 +201,7 @@ namespace SQliteJPG
 
         private void button4_Click(object sender, EventArgs e)
         {
+            textBox1.Clear();
 
 
             // EXEの起動パスを取得する
