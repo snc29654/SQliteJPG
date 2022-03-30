@@ -45,6 +45,7 @@ namespace SQliteJPG
             this.button7 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button8 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -124,6 +125,7 @@ namespace SQliteJPG
             // 
             // textBox3
             // 
+            this.textBox3.Enabled = false;
             this.textBox3.Location = new System.Drawing.Point(314, 155);
             this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox3.Name = "textBox3";
@@ -201,11 +203,21 @@ namespace SQliteJPG
             this.button8.Visible = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(453, 37);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(268, 15);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "検索、削除、更新は行番をクリック後に実施してください";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1148, 562);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button7);
@@ -249,6 +261,7 @@ namespace SQliteJPG
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Label label3;
     }
 }
 
