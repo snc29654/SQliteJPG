@@ -28,6 +28,9 @@ namespace SQliteJPG
         private void button1_Click(object sender, EventArgs e)
         {
             textBox1.Clear();
+            dataGridView1.Columns.Clear();
+            dataGridView1.Rows.Clear();
+
 
 
 
@@ -132,6 +135,19 @@ namespace SQliteJPG
             pictureBox1.Image = null;
             //画像のクリア
 
+
+
+            try
+            {
+                string s = dataGridView1[dataGridView1.CurrentCell.ColumnIndex + 1, dataGridView1.CurrentCell.RowIndex].Value.ToString();
+                textBox3.Text = s;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("行番号を選択してください");
+            }
+
+
             // EXEの起動パスを取得する
             string exePath = System.Windows.Forms.Application.StartupPath;
 
@@ -230,6 +246,9 @@ namespace SQliteJPG
         private void ReadAll()
         {
             textBox1.Clear();
+            dataGridView1.Columns.Clear();
+            dataGridView1.Rows.Clear();
+
 
 
             // EXEの起動パスを取得する
@@ -246,9 +265,14 @@ namespace SQliteJPG
             DateTime date = DateTime.Now;
 
             string jpgname = date.ToString("yyyyMMddHHmmss");
-
+            dataGridView1.ColumnCount = 3;
             try
             {
+
+                dataGridView1.Columns[0].HeaderText = "行番";
+                dataGridView1.Columns[1].HeaderText = "No";
+                dataGridView1.Columns[2].HeaderText = "写真名";
+
                 // データベースと接続する
                 con.Open();
 
@@ -277,8 +301,10 @@ namespace SQliteJPG
                 cmd.CommandText = sql;
                 SQLiteDataReader reader = cmd.ExecuteReader();
                 int count = 0;
+                int row = 0;
                 while (reader.Read() == true)
                 {
+                    dataGridView1.Rows.Add(row, reader["no"].ToString(), reader["title"].ToString());
                     count++;
                     textBox1.Text += reader["no"].ToString();
                     textBox1.Text += " : ";
@@ -290,6 +316,7 @@ namespace SQliteJPG
 
                     // ファイルに書き出す
                     File.WriteAllBytes(@"C:\temp\" + jpgname + @".jpg", file_binary_to);
+                    row++;
                 }
                 if (count == 0)
                 {
@@ -325,11 +352,26 @@ namespace SQliteJPG
         {
             textBox1.Clear();
             textBox2.Clear();
+            dataGridView1.Columns.Clear();
+            dataGridView1.Rows.Clear();
+
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             textBox1.Clear();
+            dataGridView1.Columns.Clear();
+            dataGridView1.Rows.Clear();
+
+            try
+            {
+                string s = dataGridView1[dataGridView1.CurrentCell.ColumnIndex + 1, dataGridView1.CurrentCell.RowIndex].Value.ToString();
+                textBox3.Text = s;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("削除しました");
+            }
 
 
             // EXEの起動パスを取得する
@@ -399,6 +441,18 @@ namespace SQliteJPG
         private void button7_Click(object sender, EventArgs e)
         {
             textBox1.Clear();
+            dataGridView1.Columns.Clear();
+            dataGridView1.Rows.Clear();
+
+            try
+            {
+                string s = dataGridView1[dataGridView1.CurrentCell.ColumnIndex + 1, dataGridView1.CurrentCell.RowIndex].Value.ToString();
+                textBox3.Text = s;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("更新しました");
+            }
 
 
             // EXEの起動パスを取得する
