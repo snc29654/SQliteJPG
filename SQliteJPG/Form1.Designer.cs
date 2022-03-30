@@ -63,10 +63,10 @@ namespace SQliteJPG
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(439, 82);
+            this.pictureBox1.Location = new System.Drawing.Point(423, 165);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(610, 367);
+            this.pictureBox1.Size = new System.Drawing.Size(610, 404);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -97,10 +97,11 @@ namespace SQliteJPG
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(314, 91);
+            this.textBox2.Location = new System.Drawing.Point(505, 33);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(95, 23);
+            this.textBox2.Size = new System.Drawing.Size(518, 112);
             this.textBox2.TabIndex = 4;
             // 
             // button3
@@ -117,7 +118,7 @@ namespace SQliteJPG
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(256, 91);
+            this.label1.Location = new System.Drawing.Point(439, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 15);
             this.label1.TabIndex = 6;
@@ -206,7 +207,7 @@ namespace SQliteJPG
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(453, 37);
+            this.label3.Location = new System.Drawing.Point(439, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(268, 15);
             this.label3.TabIndex = 15;
@@ -216,7 +217,7 @@ namespace SQliteJPG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1148, 562);
+            this.ClientSize = new System.Drawing.Size(1148, 594);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.dataGridView1);
