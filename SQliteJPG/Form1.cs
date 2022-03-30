@@ -130,6 +130,8 @@ namespace SQliteJPG
 
         private void button3_Click(object sender, EventArgs e)
         {
+
+            set_no();
             textBox1.Clear();
             pictureBox1.Image.Dispose();
             pictureBox1.Image = null;
@@ -350,6 +352,8 @@ namespace SQliteJPG
 
         private void button6_Click(object sender, EventArgs e)
         {
+            set_no();
+
             textBox1.Clear();
             dataGridView1.Columns.Clear();
             dataGridView1.Rows.Clear();
@@ -422,6 +426,8 @@ namespace SQliteJPG
 
         private void button7_Click(object sender, EventArgs e)
         {
+            set_no();
+
             textBox1.Clear();
             dataGridView1.Columns.Clear();
             dataGridView1.Rows.Clear();
@@ -508,5 +514,21 @@ namespace SQliteJPG
             }
 
         }
+
+        private void set_no()
+        {
+            try
+            {
+                string s = dataGridView1[dataGridView1.CurrentCell.ColumnIndex + 1, dataGridView1.CurrentCell.RowIndex].Value.ToString();
+                textBox3.Text = s;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("行番号を選択してください");
+            }
+
+        }
+
+
     }
 }
