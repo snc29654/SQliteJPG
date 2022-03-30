@@ -186,12 +186,15 @@ namespace SQliteJPG
                 cmd.CommandText = sql;
                 SQLiteDataReader reader = cmd.ExecuteReader();
                 int count = 0;
+                textBox2.Clear();
                 while (reader.Read() == true)
                 {
                     count++;
                     textBox1.Text += reader["no"].ToString();
                     textBox1.Text += " : ";
                     textBox1.Text += reader["title"].ToString();
+
+                    textBox2.Text += reader["title"].ToString();
                     textBox1.Text += " : ";
                     textBox1.Text += "\r\n";
                     // BLOBのファイルをバイト配列に変換する
