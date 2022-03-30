@@ -44,6 +44,7 @@ namespace SQliteJPG
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -123,22 +124,20 @@ namespace SQliteJPG
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(314, 141);
+            this.textBox3.Location = new System.Drawing.Point(314, 155);
             this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(95, 23);
             this.textBox3.TabIndex = 7;
-            this.textBox3.Visible = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(262, 146);
+            this.label2.Location = new System.Drawing.Point(256, 158);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(25, 15);
             this.label2.TabIndex = 8;
             this.label2.Text = "NO";
-            this.label2.Visible = false;
             // 
             // button4
             // 
@@ -191,11 +190,22 @@ namespace SQliteJPG
             this.dataGridView1.Size = new System.Drawing.Size(397, 307);
             this.dataGridView1.TabIndex = 13;
             // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(268, 118);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(109, 27);
+            this.button8.TabIndex = 14;
+            this.button8.Text = "NOセット";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1148, 562);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -237,6 +247,7 @@ namespace SQliteJPG
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button8;
     }
 }
 

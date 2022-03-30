@@ -137,15 +137,6 @@ namespace SQliteJPG
 
 
 
-            try
-            {
-                string s = dataGridView1[dataGridView1.CurrentCell.ColumnIndex + 1, dataGridView1.CurrentCell.RowIndex].Value.ToString();
-                textBox3.Text = s;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("行番号を選択してください");
-            }
 
 
             // EXEの起動パスを取得する
@@ -363,15 +354,6 @@ namespace SQliteJPG
             dataGridView1.Columns.Clear();
             dataGridView1.Rows.Clear();
 
-            try
-            {
-                string s = dataGridView1[dataGridView1.CurrentCell.ColumnIndex + 1, dataGridView1.CurrentCell.RowIndex].Value.ToString();
-                textBox3.Text = s;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("削除しました");
-            }
 
 
             // EXEの起動パスを取得する
@@ -444,15 +426,6 @@ namespace SQliteJPG
             dataGridView1.Columns.Clear();
             dataGridView1.Rows.Clear();
 
-            try
-            {
-                string s = dataGridView1[dataGridView1.CurrentCell.ColumnIndex + 1, dataGridView1.CurrentCell.RowIndex].Value.ToString();
-                textBox3.Text = s;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("更新しました");
-            }
 
 
             // EXEの起動パスを取得する
@@ -519,6 +492,20 @@ namespace SQliteJPG
             }
             con.Close();
 
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string s = dataGridView1[dataGridView1.CurrentCell.ColumnIndex + 1, dataGridView1.CurrentCell.RowIndex].Value.ToString();
+                textBox3.Text = s;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("行番号を選択してください");
+            }
 
         }
     }
