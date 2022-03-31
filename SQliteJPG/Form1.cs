@@ -109,6 +109,7 @@ namespace SQliteJPG
                 con.Close();
             }
             con.Close();
+            ReadAll();
 
         }
 
@@ -133,8 +134,6 @@ namespace SQliteJPG
 
             set_no();
             textBox1.Clear();
-            pictureBox1.Image.Dispose();
-            pictureBox1.Image = null;
             //画像のクリア
 
 
@@ -247,6 +246,7 @@ namespace SQliteJPG
 
 
 
+
             // EXEの起動パスを取得する
             string exePath = System.Windows.Forms.Application.StartupPath;
 
@@ -307,11 +307,6 @@ namespace SQliteJPG
                     textBox1.Text += reader["title"].ToString();
                     textBox1.Text += " : ";
                     textBox1.Text += "\r\n";
-                    // BLOBのファイルをバイト配列に変換する
-                    byte[] file_binary_to = (byte[])reader["file_binary"];
-
-                    // ファイルに書き出す
-                    File.WriteAllBytes(@"C:\jpgtemp\" + jpgname + @".jpg", file_binary_to);
                     row++;
                 }
                 if (count == 0)
@@ -334,9 +329,6 @@ namespace SQliteJPG
                 // データベースを切断する
                 con.Close();
             }
-            Bitmap image = new Bitmap(@"C:\jpgtemp\" + jpgname + @".jpg");
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.Image = image;
             con.Close();
 
 
@@ -507,7 +499,7 @@ namespace SQliteJPG
                 sql = $" DELETE FROM sample WHERE no = " + number;
                 cmd.CommandText = sql;
                 SQLiteDataReader reader = cmd.ExecuteReader();
-
+                ReadAll();
 
             }
             catch (Exception)
@@ -583,7 +575,7 @@ namespace SQliteJPG
                 cmd.Parameters.Add(new SQLiteParameter("@name", textBox2.Text));
 
                 SQLiteDataReader reader = cmd.ExecuteReader();
-
+                ReadAll();
 
             }
             catch (Exception)

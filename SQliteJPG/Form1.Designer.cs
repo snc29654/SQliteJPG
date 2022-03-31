@@ -159,7 +159,7 @@ namespace SQliteJPG
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(256, 532);
+            this.button5.Location = new System.Drawing.Point(256, 543);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(122, 26);
