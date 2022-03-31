@@ -48,6 +48,7 @@ namespace SQliteJPG
             this.label3 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -109,7 +110,7 @@ namespace SQliteJPG
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(77, 135);
+            this.button3.Location = new System.Drawing.Point(20, 537);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(155, 38);
@@ -130,7 +131,7 @@ namespace SQliteJPG
             // textBox3
             // 
             this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(449, 117);
+            this.textBox3.Location = new System.Drawing.Point(366, 163);
             this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(50, 23);
@@ -139,7 +140,7 @@ namespace SQliteJPG
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(418, 120);
+            this.label2.Location = new System.Drawing.Point(328, 165);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(25, 15);
             this.label2.TabIndex = 8;
@@ -198,9 +199,9 @@ namespace SQliteJPG
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(284, 118);
+            this.button8.Location = new System.Drawing.Point(284, 165);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(109, 27);
+            this.button8.Size = new System.Drawing.Size(38, 17);
             this.button8.TabIndex = 14;
             this.button8.Text = "NOセット";
             this.button8.UseVisualStyleBackColor = true;
@@ -228,16 +229,26 @@ namespace SQliteJPG
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(426, 82);
+            this.textBox4.Location = new System.Drawing.Point(343, 115);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(73, 23);
             this.textBox4.TabIndex = 17;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(284, 120);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 15);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "検索ワード";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1148, 594);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.label3);
@@ -287,6 +298,7 @@ namespace SQliteJPG
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label4;
     }
 }
 
