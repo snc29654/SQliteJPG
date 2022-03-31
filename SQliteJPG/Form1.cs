@@ -629,5 +629,24 @@ namespace SQliteJPG
 
 
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                string[] picList = Directory.GetFiles(@"C:\jpgtemp", "*.jpg");
+                foreach (string f in picList)
+                {
+                    File.Delete(f);
+                }
+                MessageBox.Show("jpgtemp配下のjpgを削除しました");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("削除は最初だけ可能です");
+            }
+
+        }
     }
 }

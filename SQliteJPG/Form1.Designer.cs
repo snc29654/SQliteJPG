@@ -49,6 +49,7 @@ namespace SQliteJPG
             this.button9 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -69,7 +70,7 @@ namespace SQliteJPG
             this.pictureBox1.Location = new System.Drawing.Point(423, 165);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(610, 404);
+            this.pictureBox1.Size = new System.Drawing.Size(713, 488);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -243,11 +244,22 @@ namespace SQliteJPG
             this.label4.TabIndex = 18;
             this.label4.Text = "検索ワード";
             // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(257, 589);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(120, 26);
+            this.button10.TabIndex = 19;
+            this.button10.Text = "jpgtemp削除";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1148, 594);
+            this.ClientSize = new System.Drawing.Size(1158, 674);
+            this.Controls.Add(this.button10);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.button9);
@@ -269,7 +281,7 @@ namespace SQliteJPG
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "jpg画像管理";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -299,6 +311,7 @@ namespace SQliteJPG
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button10;
     }
 }
 
