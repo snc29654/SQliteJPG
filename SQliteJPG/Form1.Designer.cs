@@ -46,6 +46,8 @@ namespace SQliteJPG
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button8 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.button9 = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -112,7 +114,7 @@ namespace SQliteJPG
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(155, 38);
             this.button3.TabIndex = 5;
-            this.button3.Text = "DB検索読み出し";
+            this.button3.Text = "指定行読み出し";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -128,16 +130,16 @@ namespace SQliteJPG
             // textBox3
             // 
             this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(314, 155);
+            this.textBox3.Location = new System.Drawing.Point(449, 117);
             this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(95, 23);
+            this.textBox3.Size = new System.Drawing.Size(50, 23);
             this.textBox3.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(256, 158);
+            this.label2.Location = new System.Drawing.Point(418, 120);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(25, 15);
             this.label2.TabIndex = 8;
@@ -196,7 +198,7 @@ namespace SQliteJPG
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(268, 118);
+            this.button8.Location = new System.Drawing.Point(284, 118);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(109, 27);
             this.button8.TabIndex = 14;
@@ -210,15 +212,34 @@ namespace SQliteJPG
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(439, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(268, 15);
+            this.label3.Size = new System.Drawing.Size(386, 15);
             this.label3.TabIndex = 15;
-            this.label3.Text = "検索、削除、更新は行番をクリック後に実施してください";
+            this.label3.Text = "DB検索読み出し、指定削除、写真名更新は行番をクリック後に実施してください";
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(284, 77);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(132, 35);
+            this.button9.TabIndex = 16;
+            this.button9.Text = "写真名あいまい検索";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(426, 82);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(73, 23);
+            this.textBox4.TabIndex = 17;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1148, 594);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.dataGridView1);
@@ -264,6 +285,8 @@ namespace SQliteJPG
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }
 
