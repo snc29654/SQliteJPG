@@ -213,9 +213,9 @@ namespace SQliteJPG
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(439, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(386, 15);
+            this.label3.Size = new System.Drawing.Size(313, 15);
             this.label3.TabIndex = 15;
-            this.label3.Text = "DB検索読み出し、指定削除、写真名更新は行番をクリック後に実施してください";
+            this.label3.Text = "ファイル読み出し→写真名記述→DB格納の順に操作してください";
             // 
             // button9
             // 
