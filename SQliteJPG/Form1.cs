@@ -201,7 +201,7 @@ namespace SQliteJPG
                     byte[] file_binary_to = (byte[])reader["file_binary"];
 
                     // ファイルに書き出す
-                    File.WriteAllBytes(@"C:\temp\"+ jpgname + @".jpg", file_binary_to);
+                    File.WriteAllBytes(@"C:\jpgtemp\"+ jpgname + @".jpg", file_binary_to);
                 }
                 if (count == 0)
                 {
@@ -224,7 +224,7 @@ namespace SQliteJPG
                 // データベースを切断する
                 con.Close();
             }
-            Bitmap image = new Bitmap(@"C:\temp\" + jpgname + @".jpg");
+            Bitmap image = new Bitmap(@"C:\jpgtemp\" + jpgname + @".jpg");
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.Image = image;
             con.Close();
@@ -311,7 +311,7 @@ namespace SQliteJPG
                     byte[] file_binary_to = (byte[])reader["file_binary"];
 
                     // ファイルに書き出す
-                    File.WriteAllBytes(@"C:\temp\" + jpgname + @".jpg", file_binary_to);
+                    File.WriteAllBytes(@"C:\jpgtemp\" + jpgname + @".jpg", file_binary_to);
                     row++;
                 }
                 if (count == 0)
@@ -334,7 +334,7 @@ namespace SQliteJPG
                 // データベースを切断する
                 con.Close();
             }
-            Bitmap image = new Bitmap(@"C:\temp\" + jpgname + @".jpg");
+            Bitmap image = new Bitmap(@"C:\jpgtemp\" + jpgname + @".jpg");
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.Image = image;
             con.Close();
