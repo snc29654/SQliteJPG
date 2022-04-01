@@ -20,6 +20,7 @@ namespace SQliteJPG
         public Form1()
         {
             InitializeComponent();
+            makedir();
             ReadAll();
 
 
@@ -242,7 +243,21 @@ namespace SQliteJPG
 
 
         }
+        private void makedir()
+        {
+            string path = @"C:\jpgtemp";
 
+            if (Directory.Exists(path))
+            {
+            }
+            else
+            {
+                Directory.CreateDirectory(path);
+                MessageBox.Show("C:jpgtempを作成しました");
+            }
+
+
+        }
         private void ReadAll()
         {
             textBox1.Clear();
