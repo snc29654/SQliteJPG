@@ -223,9 +223,14 @@ namespace SQliteJPG
                 // データベースを切断する
                 con.Close();
             }
-            Bitmap image = new Bitmap(@"C:\jpgtemp\" + jpgname + @".jpg");
+
+            System.IO.FileStream fs;
+            fs = new System.IO.FileStream(@"C:\jpgtemp\" + jpgname + @".jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.Image = image;
+            pictureBox1.Image = System.Drawing.Image.FromStream(fs);
+            fs.Close();
+
+
             con.Close();
 
         }
