@@ -206,7 +206,7 @@ namespace SQliteJPG
                 if (count == 0)
                 {
 
-                    MessageBox.Show("検索NOが存在しません");
+                    MessageBox.Show("行番をクリックしてください");
                     return;
 
                 }
@@ -623,7 +623,7 @@ namespace SQliteJPG
             }
             catch (Exception)
             {
-                MessageBox.Show("行番号を選択してください");
+                MessageBox.Show("行番をクリックしてください");
             }
 
         }
@@ -637,7 +637,7 @@ namespace SQliteJPG
             }
             catch (Exception)
             {
-                MessageBox.Show("行番号を選択してください");
+                MessageBox.Show("行番をクリックしてください");
             }
 
         }
@@ -667,6 +667,11 @@ namespace SQliteJPG
                 MessageBox.Show("削除は最初だけ可能です");
             }
 
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            button3_Click(sender,e);
         }
     }
 }
