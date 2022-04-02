@@ -676,7 +676,6 @@ namespace SQliteJPG
 
         private void dataGridView1_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
         {
-            button3_Click(sender, e);
 
         }
     }
