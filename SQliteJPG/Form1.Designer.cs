@@ -314,10 +314,11 @@ namespace SQliteJPG
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 15;
             this.listBox1.Items.AddRange(new object[] {
-            "みっちゃん",
-            "ちーちゃん",
-            "良太郎",
-            "みくるちゃん"});
+            "一郎",
+            "二郎",
+            "三郎",
+            "四郎",
+            "五郎"});
             this.listBox1.Location = new System.Drawing.Point(1006, 31);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(140, 94);
