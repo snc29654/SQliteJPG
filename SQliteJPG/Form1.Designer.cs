@@ -51,6 +51,10 @@ namespace SQliteJPG
             this.label4 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -92,12 +96,12 @@ namespace SQliteJPG
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(33, 234);
+            this.textBox1.Location = new System.Drawing.Point(33, 303);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(345, 279);
+            this.textBox1.Size = new System.Drawing.Size(345, 210);
             this.textBox1.TabIndex = 3;
             // 
             // textBox2
@@ -112,7 +116,7 @@ namespace SQliteJPG
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(20, 537);
+            this.button3.Location = new System.Drawing.Point(24, 580);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(155, 38);
@@ -161,7 +165,7 @@ namespace SQliteJPG
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(256, 543);
+            this.button5.Location = new System.Drawing.Point(260, 586);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(122, 26);
@@ -193,10 +197,10 @@ namespace SQliteJPG
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 225);
+            this.dataGridView1.Location = new System.Drawing.Point(24, 289);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(397, 307);
+            this.dataGridView1.Size = new System.Drawing.Size(397, 286);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dataGridView1_CellStateChanged);
@@ -249,7 +253,7 @@ namespace SQliteJPG
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(257, 589);
+            this.button10.Location = new System.Drawing.Point(261, 632);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(120, 26);
             this.button10.TabIndex = 19;
@@ -267,11 +271,49 @@ namespace SQliteJPG
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(144, 225);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(63, 23);
+            this.textBox5.TabIndex = 21;
+            this.textBox5.Text = "1";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(144, 254);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(63, 23);
+            this.textBox6.TabIndex = 22;
+            this.textBox6.Text = "10";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(79, 228);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 15);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "開始NO";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(78, 256);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 15);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "終了NO";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 674);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.label4);
@@ -327,6 +369,10 @@ namespace SQliteJPG
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
 

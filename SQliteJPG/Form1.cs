@@ -312,8 +312,11 @@ namespace SQliteJPG
                 //cmd.ExecuteNonQuery();
                 // ファイルをバイト配列に変換する
 
+                string from_no = textBox5.Text;
+                string to_no = textBox6.Text;
+
                 // データを取得する
-                sql = $" SELECT * FROM sample";
+                sql = $" SELECT * FROM sample WHERE no BETWEEN "+ from_no  + $" AND "+ to_no;
                 cmd.CommandText = sql;
                 SQLiteDataReader reader = cmd.ExecuteReader();
                 int count = 0;
