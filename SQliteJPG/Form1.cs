@@ -697,7 +697,7 @@ namespace SQliteJPG
                 cmd.Parameters.Add(new SQLiteParameter("@name", textBox2.Text));
 
                 SQLiteDataReader reader = cmd.ExecuteReader();
-                SrchAll_Fix();
+                ReadAll();
 
             }
             catch (Exception)
