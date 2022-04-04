@@ -453,6 +453,105 @@ namespace SQliteJPG
 
         }
 
+        private void SrchAll_Fix()
+        {
+            textBox1.Clear();
+            dataGridView1.Columns.Clear();
+            dataGridView1.Rows.Clear();
+
+
+
+            // EXEの起動パスを取得する
+            string exePath = System.Windows.Forms.Application.StartupPath;
+
+            // DBフルパスを組みたてる
+            string dbFullPath = System.IO.Path.Combine(exePath, "test.db");
+
+            // 接続先データベースを指定する
+            SQLiteConnection con = new SQLiteConnection(String.Format($"Data Source = {dbFullPath}"));
+
+            DataTable dt = new DataTable();
+
+            DateTime date = DateTime.Now;
+
+            string jpgname = date.ToString("yyyyMMddHHmmss");
+            dataGridView1.ColumnCount = 3;
+            try
+            {
+
+                dataGridView1.Columns[0].HeaderText = "行番";
+                dataGridView1.Columns[1].HeaderText = "No";
+                dataGridView1.Columns[2].HeaderText = "写真名";
+
+                // データベースと接続する
+                con.Open();
+
+                // SQLコマンドを宣言する
+                SQLiteCommand cmd = con.CreateCommand();
+
+                // テーブルを作成する
+                string sql = "";
+                sql += "CREATE TABLE IF NOT EXISTS sample ";
+                sql += "( ";
+                sql += "  no INTEGER PRIMARY KEY AUTOINCREMENT, ";
+                sql += "  title TEXT, ";
+                sql += "  file_binary BLOB ";
+                sql += ") ";
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+
+                // データを全て削除する
+                //sql = "DELETE FROM sample ";
+                //cmd.CommandText = sql;
+                //cmd.ExecuteNonQuery();
+                // ファイルをバイト配列に変換する
+
+                // データを取得する
+
+                string word_per = "%" + textBox2.Text + "%";
+                sql = "SELECT * FROM sample WHERE title LIKE" +
+                $" '{word_per}' ORDER BY NO ASC";
+
+                cmd.CommandText = sql;
+                SQLiteDataReader reader = cmd.ExecuteReader();
+                int count = 0;
+                int row = 0;
+                while (reader.Read() == true)
+                {
+                    dataGridView1.Rows.Add(row, reader["no"].ToString(), reader["title"].ToString());
+                    count++;
+                    textBox1.Text += reader["no"].ToString();
+                    textBox1.Text += " : ";
+                    textBox1.Text += reader["title"].ToString();
+                    textBox1.Text += " : ";
+                    textBox1.Text += "\r\n";
+                    row++;
+                }
+                if (count == 0)
+                {
+
+                    MessageBox.Show("DBが空です");
+                    return;
+
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("DBが空です");
+                return;
+            }
+
+            finally
+            {
+                // データベースを切断する
+                con.Close();
+            }
+            con.Close();
+
+
+        }
+
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -595,7 +694,7 @@ namespace SQliteJPG
                 cmd.Parameters.Add(new SQLiteParameter("@name", textBox2.Text));
 
                 SQLiteDataReader reader = cmd.ExecuteReader();
-                ReadAll();
+                SrchAll_Fix();
 
             }
             catch (Exception)
