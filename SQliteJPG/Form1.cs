@@ -678,5 +678,95 @@ namespace SQliteJPG
         {
 
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            dataGridView1.Columns.Clear();
+            dataGridView1.Rows.Clear();
+
+
+            openFileDialog1.Filter = "JPEGファイル|*.jpg";
+            DialogResult dr = openFileDialog1.ShowDialog();
+
+            string s3 = "";
+            s3 = System.IO.Path.GetDirectoryName(openFileDialog1.FileName);
+
+
+
+            string[] files = System.IO.Directory.GetFiles(
+            s3, "*.jpg", System.IO.SearchOption.AllDirectories);
+
+
+            // EXEの起動パスを取得する
+            string exePath = System.Windows.Forms.Application.StartupPath;
+
+            // DBフルパスを組みたてる
+            string dbFullPath = System.IO.Path.Combine(exePath, "test.db");
+
+            // 接続先データベースを指定する
+            SQLiteConnection con = new SQLiteConnection(String.Format($"Data Source = {dbFullPath}"));
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                // データベースと接続する
+                con.Open();
+
+                // SQLコマンドを宣言する
+                SQLiteCommand cmd = con.CreateCommand();
+
+                // テーブルを作成する
+                string sql = "";
+                sql += "CREATE TABLE IF NOT EXISTS sample ";
+                sql += "( ";
+                sql += "  no INTEGER PRIMARY KEY AUTOINCREMENT, ";
+                sql += "  title TEXT, ";
+                sql += "  file_binary BLOB ";
+                sql += ") ";
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+
+                // データを全て削除する
+                //sql = "DELETE FROM sample ";
+                //cmd.CommandText = sql;
+                //cmd.ExecuteNonQuery();
+                // ファイルをバイト配列に変換する
+
+                foreach (string file in files)
+                {
+
+
+
+                    byte[] file_binary_from = File.ReadAllBytes(file);
+
+                    // データを挿入する
+                    sql = $" INSERT INTO sample(no,title,file_binary) VALUES (NULL,@name, @file_binary)";
+                    cmd.CommandText = sql;
+                    cmd.Parameters.Add(new SQLiteParameter("@name", textBox2.Text));
+                    cmd.Parameters.Add("@file_binary", DbType.Binary).Value = file_binary_from;
+                    cmd.ExecuteNonQuery();
+
+
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("ファイル読み出ししてください");
+                return;
+            }
+
+            finally
+            {
+                // データベースを切断する
+                con.Close();
+            }
+            con.Close();
+            ReadAll();
+            MessageBox.Show("一括登録が完了しました");
+
+        }
     }
 }
