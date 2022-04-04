@@ -870,5 +870,23 @@ namespace SQliteJPG
             MessageBox.Show("一括登録が完了しました");
 
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Add(textBox2.Text);
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            int sel = listBox1.SelectedIndex;
+            listBox1.Items.RemoveAt(sel);
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = listBox1.SelectedItem.ToString();
+        }
     }
 }

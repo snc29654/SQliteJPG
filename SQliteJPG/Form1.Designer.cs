@@ -55,6 +55,10 @@ namespace SQliteJPG
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +76,7 @@ namespace SQliteJPG
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(423, 165);
+            this.pictureBox1.Location = new System.Drawing.Point(427, 175);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(713, 488);
@@ -111,7 +115,7 @@ namespace SQliteJPG
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox2.Size = new System.Drawing.Size(518, 112);
+            this.textBox2.Size = new System.Drawing.Size(480, 112);
             this.textBox2.TabIndex = 4;
             // 
             // button3
@@ -305,11 +309,59 @@ namespace SQliteJPG
             this.label6.TabIndex = 24;
             this.label6.Text = "終了NO";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Items.AddRange(new object[] {
+            "みっちゃん",
+            "ちーちゃん",
+            "良太郎",
+            "みくるちゃん"});
+            this.listBox1.Location = new System.Drawing.Point(1006, 31);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(140, 94);
+            this.listBox1.TabIndex = 25;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(1006, 1);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(134, 31);
+            this.button12.TabIndex = 26;
+            this.button12.Text = "写真名からリスト追加";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(1006, 127);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(88, 33);
+            this.button13.TabIndex = 27;
+            this.button13.Text = "リスト削除";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(844, 1);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(141, 30);
+            this.button14.TabIndex = 28;
+            this.button14.Text = "リストからコピー";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 674);
+            this.Controls.Add(this.button14);
+            this.Controls.Add(this.button13);
+            this.Controls.Add(this.button12);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox6);
@@ -373,6 +425,10 @@ namespace SQliteJPG
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button14;
     }
 }
 
