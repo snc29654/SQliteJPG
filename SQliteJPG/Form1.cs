@@ -886,7 +886,17 @@ namespace SQliteJPG
 
         private void button14_Click(object sender, EventArgs e)
         {
-            textBox2.Text = listBox1.SelectedItem.ToString();
+            try
+            {
+
+                textBox2.Text = listBox1.SelectedItem.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("リストを選択してください");
+                return;
+            }
+
         }
     }
 }
