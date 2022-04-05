@@ -16,6 +16,7 @@ namespace SQliteJPG
     public partial class Form1 : Form
     {
         string pathname = "";
+        string dbname = "";
 
         public Form1()
         {
@@ -910,6 +911,19 @@ namespace SQliteJPG
             {
                 MessageBox.Show("リストを選択してください");
                 return;
+            }
+
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "DBファイル|*.db";
+            DialogResult dr = openFileDialog1.ShowDialog();
+            if (dr == System.Windows.Forms.DialogResult.OK)
+            {
+                dbname = openFileDialog1.FileName;
+                string path1 = dbname;
+                textBox7.Text = path1;
             }
 
         }

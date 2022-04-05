@@ -63,16 +63,17 @@ namespace SQliteJPG
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.button15 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.button16 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(76, 82);
+            this.button1.Location = new System.Drawing.Point(74, 114);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 38);
+            this.button1.Size = new System.Drawing.Size(157, 26);
             this.button1.TabIndex = 0;
             this.button1.Text = "DB格納";
             this.button1.UseVisualStyleBackColor = true;
@@ -89,10 +90,10 @@ namespace SQliteJPG
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(76, 32);
+            this.button2.Location = new System.Drawing.Point(74, 77);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 38);
+            this.button2.Size = new System.Drawing.Size(157, 26);
             this.button2.TabIndex = 2;
             this.button2.Text = "ファイル読み出し";
             this.button2.UseVisualStyleBackColor = true;
@@ -162,10 +163,10 @@ namespace SQliteJPG
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(77, 187);
+            this.button4.Location = new System.Drawing.Point(74, 188);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(155, 33);
+            this.button4.Size = new System.Drawing.Size(157, 26);
             this.button4.TabIndex = 9;
             this.button4.Text = "DB全読み出し";
             this.button4.UseVisualStyleBackColor = true;
@@ -184,9 +185,9 @@ namespace SQliteJPG
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(284, 188);
+            this.button6.Location = new System.Drawing.Point(284, 191);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(124, 31);
+            this.button6.Size = new System.Drawing.Size(132, 24);
             this.button6.TabIndex = 11;
             this.button6.Text = "指定削除";
             this.button6.UseVisualStyleBackColor = true;
@@ -194,9 +195,9 @@ namespace SQliteJPG
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(284, 33);
+            this.button7.Location = new System.Drawing.Point(284, 49);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(134, 37);
+            this.button7.Size = new System.Drawing.Size(132, 24);
             this.button7.TabIndex = 12;
             this.button7.Text = "写真名更新";
             this.button7.UseVisualStyleBackColor = true;
@@ -235,9 +236,9 @@ namespace SQliteJPG
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(284, 77);
+            this.button9.Location = new System.Drawing.Point(284, 88);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(132, 35);
+            this.button9.Size = new System.Drawing.Size(132, 24);
             this.button9.TabIndex = 16;
             this.button9.Text = "写真名あいまい検索";
             this.button9.UseVisualStyleBackColor = true;
@@ -271,9 +272,9 @@ namespace SQliteJPG
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(74, 134);
+            this.button11.Location = new System.Drawing.Point(74, 151);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(157, 40);
+            this.button11.Size = new System.Drawing.Size(157, 26);
             this.button11.TabIndex = 20;
             this.button11.Text = "一括登録";
             this.button11.UseVisualStyleBackColor = true;
@@ -381,7 +382,6 @@ namespace SQliteJPG
             // 
             this.textBox7.Location = new System.Drawing.Point(324, 261);
             this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(83, 23);
             this.textBox7.TabIndex = 30;
             this.textBox7.Text = "test.db";
@@ -405,11 +405,22 @@ namespace SQliteJPG
             this.label7.TabIndex = 32;
             this.label7.Text = "現在のDB";
             // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(74, 36);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(157, 26);
+            this.button16.TabIndex = 33;
+            this.button16.Text = "DB読み出し";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 674);
+            this.Controls.Add(this.button16);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.textBox7);
@@ -489,6 +500,7 @@ namespace SQliteJPG
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button16;
     }
 }
 
