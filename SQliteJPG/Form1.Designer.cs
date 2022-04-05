@@ -59,6 +59,10 @@ namespace SQliteJPG
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.button15 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -354,11 +358,62 @@ namespace SQliteJPG
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 15;
+            this.listBox2.Items.AddRange(new object[] {
+            "test.db",
+            "test2.db",
+            "test3.db",
+            "test4.db",
+            "test5.db",
+            "test6.db",
+            "test7.db",
+            "test8.db",
+            "test9.db"});
+            this.listBox2.Location = new System.Drawing.Point(324, 225);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(83, 34);
+            this.listBox2.TabIndex = 29;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(324, 261);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
+            this.textBox7.Size = new System.Drawing.Size(83, 23);
+            this.textBox7.TabIndex = 30;
+            this.textBox7.Text = "test.db";
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(261, 223);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(60, 24);
+            this.button15.TabIndex = 31;
+            this.button15.Text = "DB選択";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(261, 264);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 15);
+            this.label7.TabIndex = 32;
+            this.label7.Text = "現在のDB";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 674);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.button15);
+            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.listBox2);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button12);
@@ -430,6 +485,10 @@ namespace SQliteJPG
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Label label7;
     }
 }
 

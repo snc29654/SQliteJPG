@@ -39,7 +39,7 @@ namespace SQliteJPG
             string exePath = System.Windows.Forms.Application.StartupPath;
 
             // DBフルパスを組みたてる
-            string dbFullPath = System.IO.Path.Combine(exePath, "test.db");
+            string dbFullPath = System.IO.Path.Combine(exePath, textBox7.Text);
 
             // 接続先データベースを指定する
             SQLiteConnection con = new SQLiteConnection(String.Format($"Data Source = {dbFullPath}"));
@@ -145,7 +145,7 @@ namespace SQliteJPG
             string exePath = System.Windows.Forms.Application.StartupPath;
 
             // DBフルパスを組みたてる
-            string dbFullPath = System.IO.Path.Combine(exePath, "test.db");
+            string dbFullPath = System.IO.Path.Combine(exePath, textBox7.Text);
 
             // 接続先データベースを指定する
             SQLiteConnection con = new SQLiteConnection(String.Format($"Data Source = {dbFullPath}"));
@@ -271,7 +271,7 @@ namespace SQliteJPG
             string exePath = System.Windows.Forms.Application.StartupPath;
 
             // DBフルパスを組みたてる
-            string dbFullPath = System.IO.Path.Combine(exePath, "test.db");
+            string dbFullPath = System.IO.Path.Combine(exePath, textBox7.Text);
 
             // 接続先データベースを指定する
             SQLiteConnection con = new SQLiteConnection(String.Format($"Data Source = {dbFullPath}"));
@@ -369,7 +369,7 @@ namespace SQliteJPG
             string exePath = System.Windows.Forms.Application.StartupPath;
 
             // DBフルパスを組みたてる
-            string dbFullPath = System.IO.Path.Combine(exePath, "test.db");
+            string dbFullPath = System.IO.Path.Combine(exePath, textBox7.Text);
 
             // 接続先データベースを指定する
             SQLiteConnection con = new SQLiteConnection(String.Format($"Data Source = {dbFullPath}"));
@@ -468,7 +468,7 @@ namespace SQliteJPG
             string exePath = System.Windows.Forms.Application.StartupPath;
 
             // DBフルパスを組みたてる
-            string dbFullPath = System.IO.Path.Combine(exePath, "test.db");
+            string dbFullPath = System.IO.Path.Combine(exePath, textBox7.Text);
 
             // 接続先データベースを指定する
             SQLiteConnection con = new SQLiteConnection(String.Format($"Data Source = {dbFullPath}"));
@@ -579,7 +579,7 @@ namespace SQliteJPG
             string exePath = System.Windows.Forms.Application.StartupPath;
 
             // DBフルパスを組みたてる
-            string dbFullPath = System.IO.Path.Combine(exePath, "test.db");
+            string dbFullPath = System.IO.Path.Combine(exePath, textBox7.Text);
 
             // 接続先データベースを指定する
             SQLiteConnection con = new SQLiteConnection(String.Format($"Data Source = {dbFullPath}"));
@@ -653,7 +653,7 @@ namespace SQliteJPG
             string exePath = System.Windows.Forms.Application.StartupPath;
 
             // DBフルパスを組みたてる
-            string dbFullPath = System.IO.Path.Combine(exePath, "test.db");
+            string dbFullPath = System.IO.Path.Combine(exePath, textBox7.Text);
 
             // 接続先データベースを指定する
             SQLiteConnection con = new SQLiteConnection(String.Format($"Data Source = {dbFullPath}"));
@@ -804,7 +804,7 @@ namespace SQliteJPG
             string exePath = System.Windows.Forms.Application.StartupPath;
 
             // DBフルパスを組みたてる
-            string dbFullPath = System.IO.Path.Combine(exePath, "test.db");
+            string dbFullPath = System.IO.Path.Combine(exePath, textBox7.Text);
 
             // 接続先データベースを指定する
             SQLiteConnection con = new SQLiteConnection(String.Format($"Data Source = {dbFullPath}"));
@@ -890,6 +890,21 @@ namespace SQliteJPG
             {
 
                 textBox2.Text = listBox1.SelectedItem.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("リストを選択してください");
+                return;
+            }
+
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                textBox7.Text = listBox2.SelectedItem.ToString();
             }
             catch (Exception)
             {
