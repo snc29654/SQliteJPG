@@ -95,7 +95,7 @@ namespace SQliteJPG
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(157, 26);
             this.button2.TabIndex = 2;
-            this.button2.Text = "ファイル読み出し";
+            this.button2.Text = "jpgファイル読み出し";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -195,7 +195,7 @@ namespace SQliteJPG
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(284, 49);
+            this.button7.Location = new System.Drawing.Point(284, 39);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(132, 24);
             this.button7.TabIndex = 12;
@@ -236,7 +236,7 @@ namespace SQliteJPG
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(284, 88);
+            this.button9.Location = new System.Drawing.Point(284, 80);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(132, 24);
             this.button9.TabIndex = 16;
@@ -276,7 +276,7 @@ namespace SQliteJPG
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(157, 26);
             this.button11.TabIndex = 20;
-            this.button11.Text = "一括登録";
+            this.button11.Text = "DB一括登録";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
