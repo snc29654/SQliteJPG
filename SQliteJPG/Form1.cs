@@ -216,7 +216,7 @@ namespace SQliteJPG
             }
             catch (Exception)
             {
-                MessageBox.Show("検索キーが未入力です");
+                MessageBox.Show("行番をクリックしてください");
                 return;
             }
 
@@ -627,7 +627,7 @@ namespace SQliteJPG
             }
             catch (Exception)
             {
-                MessageBox.Show("検索キーが未入力です");
+                MessageBox.Show("行番をクリックしてください");
                 return;
             }
 
@@ -703,7 +703,7 @@ namespace SQliteJPG
             }
             catch (Exception)
             {
-                MessageBox.Show("検索キーが未入力です");
+                MessageBox.Show("行番をクリックしてください");
                 return;
             }
 
@@ -880,8 +880,16 @@ namespace SQliteJPG
 
         private void button13_Click(object sender, EventArgs e)
         {
-            int sel = listBox1.SelectedIndex;
-            listBox1.Items.RemoveAt(sel);
+            try 
+            {
+                int sel = listBox1.SelectedIndex;
+                listBox1.Items.RemoveAt(sel);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("リストを選択してください");
+                return;
+            }
 
         }
 
