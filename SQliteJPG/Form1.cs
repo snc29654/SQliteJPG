@@ -324,15 +324,55 @@ namespace SQliteJPG
                 int row = 0;
                 while (reader.Read() == true)
                 {
+
+                    byte[] file_binary_to = (byte[])reader["file_binary"];
+
+                    // ファイルに書き出す
+                    File.WriteAllBytes(@"C:\jpgtemp\" + count.ToString() + @".jpg", file_binary_to);
+
+                    System.IO.FileStream fs;
+                    fs = new System.IO.FileStream(@"C:\jpgtemp\" +count.ToString() + @".jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+
+                    //DataGridViewImageColumnの作成
+                    DataGridViewImageColumn column = new DataGridViewImageColumn();
+                    //列の名前を設定
+                    column.Name = "Image"+count.ToString();
+                    //Icon型ではなく、Image型のデータを表示する
+                    //デフォルトでFalseなので、変更する必要はない
+                    column.ValuesAreIcons = false;
+                    //値の設定されていないセルに表示するイメージを設定する
+                    column.Image = new Bitmap(System.Drawing.Image.FromStream(fs));
+                    //イメージを縦横の比率を維持して拡大、縮小表示する
+                    column.ImageLayout = DataGridViewImageCellLayout.Zoom;
+                    //イメージの説明
+                    //セルをクリップボードにコピーした時に使用される
+                    column.Description = "イメージ";
+
+
+
+
+
+
                     dataGridView1.Rows.Add(row, reader["no"].ToString(), reader["title"].ToString());
-                    count++;
+                    dataGridView1.Columns.Add(column);
+
+
+
                     textBox1.Text += reader["no"].ToString();
                     textBox1.Text += " : ";
                     textBox1.Text += reader["title"].ToString();
                     textBox1.Text += " : ";
                     textBox1.Text += "\r\n";
+
+                    fs.Close();
+
+
+
+                    count++;
                     row++;
                 }
+
+
                 if (count == 0)
                 {
 
