@@ -17,6 +17,7 @@ namespace SQliteJPG
     {
         string pathname = "";
         string dbname = "";
+        int[] no_data = new int[10];
 
         public Form1()
         {
@@ -249,6 +250,128 @@ namespace SQliteJPG
 
         }
 
+        private void button3_Click_another(object sender, EventArgs e)
+        {
+            pictureBox1.Show();
+
+
+
+            textBox1.Clear();
+            //画像のクリア
+
+
+
+            pictureBox2.Hide();
+            pictureBox3.Hide();
+            pictureBox4.Hide();
+            pictureBox5.Hide();
+            pictureBox6.Hide();
+            pictureBox7.Hide();
+            pictureBox8.Hide();
+            pictureBox9.Hide();
+            pictureBox10.Hide();
+            pictureBox11.Hide();
+
+
+
+            // EXEの起動パスを取得する
+            string exePath = System.Windows.Forms.Application.StartupPath;
+
+            // DBフルパスを組みたてる
+            string dbFullPath = System.IO.Path.Combine(exePath, textBox7.Text);
+
+            // 接続先データベースを指定する
+            SQLiteConnection con = new SQLiteConnection(String.Format($"Data Source = {dbFullPath}"));
+
+            DataTable dt = new DataTable();
+
+            DateTime date = DateTime.Now;
+
+            string jpgname = date.ToString("yyyyMMddHHmmss");
+            try
+            {
+                // データベースと接続する
+                con.Open();
+
+                // SQLコマンドを宣言する
+                SQLiteCommand cmd = con.CreateCommand();
+
+                // テーブルを作成する
+                string sql = "";
+                sql += "CREATE TABLE IF NOT EXISTS sample ";
+                sql += "( ";
+                sql += "  no INTEGER PRIMARY KEY AUTOINCREMENT, ";
+                sql += "  title TEXT, ";
+                sql += "  file_binary BLOB ";
+                sql += ") ";
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+
+                // データを全て削除する
+                //sql = "DELETE FROM sample ";
+                //cmd.CommandText = sql;
+                //cmd.ExecuteNonQuery();
+                // ファイルをバイト配列に変換する
+
+                int number = int.Parse(textBox3.Text);
+                // データを取得する
+                sql = $" SELECT * FROM sample WHERE no = " + number;
+                cmd.CommandText = sql;
+                SQLiteDataReader reader = cmd.ExecuteReader();
+                int count = 0;
+                textBox2.Clear();
+                while (reader.Read() == true)
+                {
+                    count++;
+                    textBox1.Text += reader["no"].ToString();
+                    textBox1.Text += " : ";
+                    textBox1.Text += reader["title"].ToString();
+
+                    textBox2.Text += reader["title"].ToString();
+                    textBox1.Text += " : ";
+                    textBox1.Text += "\r\n";
+                    // BLOBのファイルをバイト配列に変換する
+                    byte[] file_binary_to = (byte[])reader["file_binary"];
+
+                    // ファイルに書き出す
+                    File.WriteAllBytes(@"C:\jpgtemp\" + jpgname + @".jpg", file_binary_to);
+                }
+                if (count == 0)
+                {
+
+                    MessageBox.Show("行番をクリックしてください");
+                    return;
+
+                }
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("行番をクリックしてください");
+                return;
+            }
+
+            finally
+            {
+                // データベースを切断する
+                con.Close();
+            }
+
+            System.IO.FileStream fs;
+            fs = new System.IO.FileStream(@"C:\jpgtemp\" + jpgname + @".jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.Image = System.Drawing.Image.FromStream(fs);
+            fs.Close();
+
+
+            con.Close();
+
+        }
+
+
+
+
         private void button4_Click(object sender, EventArgs e)
         {
             pictureBox1.Hide();
@@ -287,7 +410,6 @@ namespace SQliteJPG
             textBox1.Clear();
             dataGridView1.Columns.Clear();
             dataGridView1.Rows.Clear();
-
 
 
 
@@ -425,6 +547,9 @@ namespace SQliteJPG
                     dataGridView1.Rows.Add(row, reader["no"].ToString(), reader["title"].ToString());
                     dataGridView1.Columns.Add(column);
 
+                    string s = reader["no"].ToString();
+
+                    no_data[row] = int.Parse(s);
 
 
                     textBox1.Text += reader["no"].ToString();
@@ -1047,6 +1172,9 @@ namespace SQliteJPG
 
         private void pictureBox8_Click(object sender, EventArgs e)
         {
+            textBox3.Text = no_data[6].ToString();
+
+            button3_Click_another(sender, e);
 
         }
 
@@ -1066,6 +1194,77 @@ namespace SQliteJPG
             textBox5.Text = (num -10).ToString();
             textBox6.Text = (num -1).ToString();
             button4_Click(sender, e);
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            textBox3.Text = no_data[0].ToString();
+
+            button3_Click_another(sender, e);
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            textBox3.Text = no_data[1].ToString();
+
+            button3_Click_another(sender, e);
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            textBox3.Text = no_data[2].ToString();
+
+            button3_Click_another(sender, e);
+
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            textBox3.Text = no_data[3].ToString();
+
+            button3_Click_another(sender, e);
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            textBox3.Text = no_data[4].ToString();
+
+            button3_Click_another(sender, e);
+
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            textBox3.Text = no_data[5].ToString();
+
+            button3_Click_another(sender, e);
+
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            textBox3.Text = no_data[7].ToString();
+
+            button3_Click_another(sender, e);
+
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            textBox3.Text = no_data[8].ToString();
+
+            button3_Click_another(sender, e);
+
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            textBox3.Text = no_data[9].ToString();
+
+            button3_Click_another(sender, e);
 
         }
     }

@@ -454,6 +454,7 @@ namespace SQliteJPG
             this.pictureBox2.Size = new System.Drawing.Size(200, 175);
             this.pictureBox2.TabIndex = 34;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox3
             // 
@@ -462,6 +463,7 @@ namespace SQliteJPG
             this.pictureBox3.Size = new System.Drawing.Size(200, 175);
             this.pictureBox3.TabIndex = 34;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox4
             // 
@@ -470,6 +472,7 @@ namespace SQliteJPG
             this.pictureBox4.Size = new System.Drawing.Size(200, 175);
             this.pictureBox4.TabIndex = 34;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // pictureBox5
             // 
@@ -478,6 +481,7 @@ namespace SQliteJPG
             this.pictureBox5.Size = new System.Drawing.Size(200, 175);
             this.pictureBox5.TabIndex = 34;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // pictureBox6
             // 
@@ -486,6 +490,7 @@ namespace SQliteJPG
             this.pictureBox6.Size = new System.Drawing.Size(200, 175);
             this.pictureBox6.TabIndex = 34;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // pictureBox7
             // 
@@ -494,6 +499,7 @@ namespace SQliteJPG
             this.pictureBox7.Size = new System.Drawing.Size(200, 175);
             this.pictureBox7.TabIndex = 34;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // pictureBox8
             // 
@@ -511,6 +517,7 @@ namespace SQliteJPG
             this.pictureBox9.Size = new System.Drawing.Size(200, 175);
             this.pictureBox9.TabIndex = 34;
             this.pictureBox9.TabStop = false;
+            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
             // 
             // pictureBox10
             // 
@@ -519,6 +526,7 @@ namespace SQliteJPG
             this.pictureBox10.Size = new System.Drawing.Size(200, 175);
             this.pictureBox10.TabIndex = 34;
             this.pictureBox10.TabStop = false;
+            this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
             // 
             // pictureBox11
             // 
@@ -527,6 +535,7 @@ namespace SQliteJPG
             this.pictureBox11.Size = new System.Drawing.Size(200, 175);
             this.pictureBox11.TabIndex = 34;
             this.pictureBox11.TabStop = false;
+            this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
             // 
             // 次の10件
             // 
