@@ -1058,5 +1058,15 @@ namespace SQliteJPG
             textBox6.Text = (num + 10).ToString();
             button4_Click(sender, e);
         }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            int num = int.Parse(textBox5.Text);
+
+            textBox5.Text = (num -10).ToString();
+            textBox6.Text = (num -1).ToString();
+            button4_Click(sender, e);
+
+        }
     }
 }

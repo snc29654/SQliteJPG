@@ -75,6 +75,7 @@ namespace SQliteJPG
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.次の10件 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -417,12 +418,12 @@ namespace SQliteJPG
             // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(298, 297);
+            this.button15.Location = new System.Drawing.Point(259, 297);
             this.button15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(69, 32);
+            this.button15.Size = new System.Drawing.Size(108, 32);
             this.button15.TabIndex = 31;
-            this.button15.Text = "DB選択";
+            this.button15.Text = "リストDB選択";
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
@@ -442,7 +443,7 @@ namespace SQliteJPG
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(179, 35);
             this.button16.TabIndex = 33;
-            this.button16.Text = "DB読み出し";
+            this.button16.Text = "ファイルからDB選択";
             this.button16.UseVisualStyleBackColor = true;
             this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
@@ -529,19 +530,30 @@ namespace SQliteJPG
             // 
             // 次の10件
             // 
-            this.次の10件.Location = new System.Drawing.Point(84, 373);
+            this.次の10件.Location = new System.Drawing.Point(155, 382);
             this.次の10件.Name = "次の10件";
-            this.次の10件.Size = new System.Drawing.Size(180, 35);
+            this.次の10件.Size = new System.Drawing.Size(96, 37);
             this.次の10件.TabIndex = 35;
             this.次の10件.Text = "次の10件";
             this.次の10件.UseVisualStyleBackColor = true;
             this.次の10件.Click += new System.EventHandler(this.次の10件_Click);
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(28, 382);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(106, 38);
+            this.button17.TabIndex = 36;
+            this.button17.Text = "前の10件";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1323, 899);
+            this.Controls.Add(this.button17);
             this.Controls.Add(this.次の10件);
             this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.pictureBox10);
@@ -654,6 +666,7 @@ namespace SQliteJPG
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.Button 次の10件;
+        private System.Windows.Forms.Button button17;
     }
 }
 
