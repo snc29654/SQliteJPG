@@ -254,7 +254,8 @@ namespace SQliteJPG
         {
             pictureBox1.Show();
 
-
+            button6.Hide();
+            button7.Hide();
 
             textBox1.Clear();
             //画像のクリア
@@ -374,6 +375,9 @@ namespace SQliteJPG
 
         private void button4_Click(object sender, EventArgs e)
         {
+
+            button6.Show();
+            button7.Show();
             pictureBox1.Hide();
             pictureBox2.Show();
             pictureBox3.Show();
