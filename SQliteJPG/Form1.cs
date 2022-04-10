@@ -133,12 +133,24 @@ namespace SQliteJPG
 
         private void button3_Click(object sender, EventArgs e)
         {
+            pictureBox1.Show();
 
             set_no();
             textBox1.Clear();
             //画像のクリア
 
+            
 
+            pictureBox2.Hide();
+            pictureBox3.Hide();
+            pictureBox4.Hide();
+            pictureBox5.Hide();
+            pictureBox6.Hide();
+            pictureBox7.Hide();
+            pictureBox8.Hide();
+            pictureBox9.Hide();
+            pictureBox10.Hide();
+            pictureBox11.Hide();
 
 
 
@@ -239,6 +251,17 @@ namespace SQliteJPG
 
         private void button4_Click(object sender, EventArgs e)
         {
+            pictureBox1.Hide();
+            pictureBox2.Show();
+            pictureBox3.Show();
+            pictureBox4.Show();
+            pictureBox5.Show();
+            pictureBox6.Show();
+            pictureBox7.Show();
+            pictureBox8.Show();
+            pictureBox9.Show();
+            pictureBox10.Show();
+            pictureBox11.Show();
 
             ReadAll();
 
@@ -350,6 +373,52 @@ namespace SQliteJPG
 
 
 
+                    Bitmap image = new Bitmap(System.Drawing.Image.FromStream(fs));
+
+
+                    switch (row)
+                    {
+                        case 0:
+                            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+                            pictureBox2.Image = image;
+                            break;
+                        case 1:
+                            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+                            pictureBox3.Image = image;
+                            break;
+                        case 2:
+                            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+                            pictureBox4.Image = image;
+                            break;
+                        case 3:
+                            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+                            pictureBox5.Image = image;
+                            break;
+                        case 4:
+                            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+                            pictureBox6.Image = image;
+                            break;
+                        case 5:
+                            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
+                            pictureBox7.Image = image;
+                            break;
+                        case 6:
+                            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
+                            pictureBox8.Image = image;
+                            break;
+                        case 7:
+                            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
+                            pictureBox9.Image = image;
+                            break;
+                        case 8:
+                            pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
+                            pictureBox10.Image = image;
+                            break;
+                        case 9:
+                            pictureBox11.SizeMode = PictureBoxSizeMode.Zoom;
+                            pictureBox11.Image = image;
+                            break;
+                    }
 
 
 
@@ -973,6 +1042,11 @@ namespace SQliteJPG
                 string path1 = dbname;
                 textBox7.Text = path1;
             }
+
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
 
         }
     }
