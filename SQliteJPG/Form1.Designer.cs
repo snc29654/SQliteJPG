@@ -74,6 +74,7 @@ namespace SQliteJPG
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.次の10件 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -122,7 +123,7 @@ namespace SQliteJPG
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(38, 404);
+            this.textBox1.Location = new System.Drawing.Point(70, 487);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -140,7 +141,7 @@ namespace SQliteJPG
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(27, 773);
+            this.button3.Location = new System.Drawing.Point(28, 814);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(177, 51);
             this.button3.TabIndex = 5;
@@ -186,7 +187,7 @@ namespace SQliteJPG
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(297, 781);
+            this.button5.Location = new System.Drawing.Point(298, 822);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(139, 35);
             this.button5.TabIndex = 10;
@@ -219,7 +220,7 @@ namespace SQliteJPG
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 385);
+            this.dataGridView1.Location = new System.Drawing.Point(28, 426);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -280,7 +281,7 @@ namespace SQliteJPG
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(298, 843);
+            this.button10.Location = new System.Drawing.Point(298, 864);
             this.button10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(137, 35);
@@ -526,11 +527,22 @@ namespace SQliteJPG
             this.pictureBox11.TabIndex = 34;
             this.pictureBox11.TabStop = false;
             // 
+            // 次の10件
+            // 
+            this.次の10件.Location = new System.Drawing.Point(84, 373);
+            this.次の10件.Name = "次の10件";
+            this.次の10件.Size = new System.Drawing.Size(180, 35);
+            this.次の10件.TabIndex = 35;
+            this.次の10件.Text = "次の10件";
+            this.次の10件.UseVisualStyleBackColor = true;
+            this.次の10件.Click += new System.EventHandler(this.次の10件_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1323, 899);
+            this.Controls.Add(this.次の10件);
             this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.pictureBox9);
@@ -641,6 +653,7 @@ namespace SQliteJPG
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.Button 次の10件;
     }
 }
 
