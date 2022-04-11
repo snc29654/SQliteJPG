@@ -1023,6 +1023,7 @@ namespace SQliteJPG
         private void button11_Click(object sender, EventArgs e)
         {
             textBox1.Clear();
+            textBox2.Clear();
             dataGridView1.Columns.Clear();
             dataGridView1.Rows.Clear();
 
