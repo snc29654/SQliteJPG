@@ -254,8 +254,8 @@ namespace SQliteJPG
         {
             pictureBox1.Show();
 
-            button6.Hide();
-            button7.Hide();
+            //button6.Hide();
+            //button7.Hide();
 
             textBox1.Clear();
             //画像のクリア
@@ -376,8 +376,8 @@ namespace SQliteJPG
         private void button4_Click(object sender, EventArgs e)
         {
 
-            button6.Show();
-            button7.Show();
+            //button6.Show();
+            //button7.Show();
             pictureBox1.Hide();
             pictureBox2.Show();
             pictureBox3.Show();
@@ -806,7 +806,7 @@ namespace SQliteJPG
 
         private void button6_Click(object sender, EventArgs e)
         {
-            set_no();
+            //set_no();
 
             textBox1.Clear();
             dataGridView1.Columns.Clear();
@@ -880,7 +880,7 @@ namespace SQliteJPG
 
         private void button7_Click(object sender, EventArgs e)
         {
-            set_no();
+            //set_no();
 
             textBox1.Clear();
             dataGridView1.Columns.Clear();
