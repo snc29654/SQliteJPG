@@ -390,6 +390,18 @@ namespace SQliteJPG
             pictureBox10.Show();
             pictureBox11.Show();
 
+
+            pictureBox2.Image=null;
+            pictureBox3.Image = null;
+            pictureBox4.Image = null;
+            pictureBox5.Image = null;
+            pictureBox6.Image = null;
+            pictureBox7.Image = null;
+            pictureBox8.Image = null;
+            pictureBox9.Image = null;
+            pictureBox10.Image = null;
+            pictureBox11.Image = null;
+
             ReadAll();
 
 
