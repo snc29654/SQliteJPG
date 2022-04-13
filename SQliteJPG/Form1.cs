@@ -24,6 +24,7 @@ namespace SQliteJPG
             InitializeComponent();
             makedir();
             ReadAll();
+            button18.Hide();
 
 
         }
@@ -135,7 +136,7 @@ namespace SQliteJPG
         private void button3_Click(object sender, EventArgs e)
         {
             pictureBox1.Show();
-
+            button18.Show();
             set_no();
             textBox1.Clear();
             //画像のクリア
@@ -253,6 +254,7 @@ namespace SQliteJPG
         private void button3_Click_another(object sender, EventArgs e)
         {
             pictureBox1.Show();
+            button18.Show();
 
             //button6.Hide();
             //button7.Hide();
@@ -375,7 +377,7 @@ namespace SQliteJPG
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            button18.Hide();
             //button6.Show();
             //button7.Show();
             pictureBox1.Hide();
@@ -1284,5 +1286,9 @@ namespace SQliteJPG
             button3_Click_another(sender, e);
 
         }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            button4_Click(sender, e);        }
     }
 }

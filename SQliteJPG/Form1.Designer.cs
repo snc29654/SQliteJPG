@@ -76,6 +76,7 @@ namespace SQliteJPG
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.次の10件 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -182,7 +183,7 @@ namespace SQliteJPG
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(179, 35);
             this.button4.TabIndex = 9;
-            this.button4.Text = "DB全読み出し";
+            this.button4.Text = "DB範囲読み出し";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -557,11 +558,22 @@ namespace SQliteJPG
             this.button17.UseVisualStyleBackColor = true;
             this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(487, 201);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(82, 33);
+            this.button18.TabIndex = 37;
+            this.button18.Text = "戻る";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1323, 899);
+            this.Controls.Add(this.button18);
             this.Controls.Add(this.button17);
             this.Controls.Add(this.次の10件);
             this.Controls.Add(this.pictureBox11);
@@ -676,6 +688,7 @@ namespace SQliteJPG
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.Button 次の10件;
         private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button button18;
     }
 }
 
