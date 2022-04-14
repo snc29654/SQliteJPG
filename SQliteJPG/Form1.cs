@@ -120,6 +120,7 @@ namespace SQliteJPG
         private void button2_Click(object sender, EventArgs e)
         {
 
+            pictureBox1.Show();
             pictureBox2.Hide();
             pictureBox3.Hide();
             pictureBox4.Hide();
