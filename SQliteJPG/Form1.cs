@@ -120,6 +120,17 @@ namespace SQliteJPG
         private void button2_Click(object sender, EventArgs e)
         {
 
+            pictureBox2.Hide();
+            pictureBox3.Hide();
+            pictureBox4.Hide();
+            pictureBox5.Hide();
+            pictureBox6.Hide();
+            pictureBox7.Hide();
+            pictureBox8.Hide();
+            pictureBox9.Hide();
+            pictureBox10.Hide();
+            pictureBox11.Hide();
+
             openFileDialog1.Filter = "JPEGファイル|*.jpg";
             DialogResult dr = openFileDialog1.ShowDialog();
             if (dr == System.Windows.Forms.DialogResult.OK)
@@ -1467,6 +1478,16 @@ namespace SQliteJPG
                 if (count == 0)
                 {
 
+                    pictureBox2.Hide();
+                    pictureBox3.Hide();
+                    pictureBox4.Hide();
+                    pictureBox5.Hide();
+                    pictureBox6.Hide();
+                    pictureBox7.Hide();
+                    pictureBox8.Hide();
+                    pictureBox9.Hide();
+                    pictureBox10.Hide();
+                    pictureBox11.Hide();
                     MessageBox.Show("削除完了です");
                     return;
 
@@ -1475,6 +1496,16 @@ namespace SQliteJPG
             }
             catch (Exception)
             {
+                pictureBox2.Hide();
+                pictureBox3.Hide();
+                pictureBox4.Hide();
+                pictureBox5.Hide();
+                pictureBox6.Hide();
+                pictureBox7.Hide();
+                pictureBox8.Hide();
+                pictureBox9.Hide();
+                pictureBox10.Hide();
+                pictureBox11.Hide();
                 MessageBox.Show("削除完了です");
                 return;
             }
@@ -1485,6 +1516,17 @@ namespace SQliteJPG
                 con.Close();
             }
             con.Close();
+            pictureBox2.Hide();
+            pictureBox3.Hide();
+            pictureBox4.Hide();
+            pictureBox5.Hide();
+            pictureBox6.Hide();
+            pictureBox7.Hide();
+            pictureBox8.Hide();
+            pictureBox9.Hide();
+            pictureBox10.Hide();
+            pictureBox11.Hide();
+
             MessageBox.Show("削除完了です");
 
         }
