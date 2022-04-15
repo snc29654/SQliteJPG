@@ -63,6 +63,7 @@ namespace SQliteJPG
                 sql += "( ";
                 sql += "  no INTEGER PRIMARY KEY AUTOINCREMENT, ";
                 sql += "  title TEXT, ";
+                sql += "  filename TEXT, ";
                 sql += "  file_binary BLOB ";
                 sql += ") ";
                 cmd.CommandText = sql;
@@ -76,9 +77,10 @@ namespace SQliteJPG
                 byte[] file_binary_from = File.ReadAllBytes(pathname);
 
                 // データを挿入する
-                sql = $" INSERT INTO sample(no,title,file_binary) VALUES (NULL,@name, @file_binary)";
+                sql = $" INSERT INTO sample(no,title,filename,file_binary) VALUES (NULL,@name, @filename,@file_binary)";
                 cmd.CommandText = sql;
                 cmd.Parameters.Add(new SQLiteParameter("@name", textBox2.Text));
+                cmd.Parameters.Add(new SQLiteParameter("@filename", pathname));
                 cmd.Parameters.Add("@file_binary", DbType.Binary).Value = file_binary_from;
                 cmd.ExecuteNonQuery();
 
@@ -91,6 +93,8 @@ namespace SQliteJPG
                     textBox1.Text += reader["no"].ToString();
                     textBox1.Text += " : ";
                     textBox1.Text += reader["title"].ToString();
+                    textBox1.Text += " : ";
+                    textBox1.Text += reader["filename"].ToString();
                     textBox1.Text += " : ";
                     textBox1.Text += "\r\n";
                     // BLOBのファイルをバイト配列に変換する
@@ -458,13 +462,14 @@ namespace SQliteJPG
             DateTime date = DateTime.Now;
 
             string jpgname = date.ToString("yyyyMMddHHmmss");
-            dataGridView1.ColumnCount = 3;
+            dataGridView1.ColumnCount = 4;
             try
             {
 
                 dataGridView1.Columns[0].HeaderText = "行番";
                 dataGridView1.Columns[1].HeaderText = "No";
                 dataGridView1.Columns[2].HeaderText = "写真名";
+                dataGridView1.Columns[3].HeaderText = "ファイル名";
 
                 // データベースと接続する
                 con.Open();
@@ -478,6 +483,7 @@ namespace SQliteJPG
                 sql += "( ";
                 sql += "  no INTEGER PRIMARY KEY AUTOINCREMENT, ";
                 sql += "  title TEXT, ";
+                sql += "  filename TEXT, ";
                 sql += "  file_binary BLOB ";
                 sql += ") ";
                 cmd.CommandText = sql;
@@ -575,7 +581,7 @@ namespace SQliteJPG
 
 
 
-                    dataGridView1.Rows.Add(row, reader["no"].ToString(), reader["title"].ToString());
+                    dataGridView1.Rows.Add(row, reader["no"].ToString(), reader["title"].ToString(), reader["filename"].ToString());
                     dataGridView1.Columns.Add(column);
 
                     string s = reader["no"].ToString();
@@ -586,6 +592,8 @@ namespace SQliteJPG
                     textBox1.Text += reader["no"].ToString();
                     textBox1.Text += " : ";
                     textBox1.Text += reader["title"].ToString();
+                    textBox1.Text += " : ";
+                    textBox1.Text += reader["filename"].ToString();
                     textBox1.Text += " : ";
                     textBox1.Text += "\r\n";
 
@@ -645,13 +653,14 @@ namespace SQliteJPG
             DateTime date = DateTime.Now;
 
             string jpgname = date.ToString("yyyyMMddHHmmss");
-            dataGridView1.ColumnCount = 3;
+            dataGridView1.ColumnCount = 4;
             try
             {
 
                 dataGridView1.Columns[0].HeaderText = "行番";
                 dataGridView1.Columns[1].HeaderText = "No";
                 dataGridView1.Columns[2].HeaderText = "写真名";
+                dataGridView1.Columns[3].HeaderText = "ファイル名";
 
                 // データベースと接続する
                 con.Open();
@@ -665,6 +674,7 @@ namespace SQliteJPG
                 sql += "( ";
                 sql += "  no INTEGER PRIMARY KEY AUTOINCREMENT, ";
                 sql += "  title TEXT, ";
+                sql += "  filename TEXT, ";
                 sql += "  file_binary BLOB ";
                 sql += ") ";
                 cmd.CommandText = sql;
@@ -688,11 +698,13 @@ namespace SQliteJPG
                 int row = 0;
                 while (reader.Read() == true)
                 {
-                    dataGridView1.Rows.Add(row, reader["no"].ToString(), reader["title"].ToString());
+                    dataGridView1.Rows.Add(row, reader["no"].ToString(), reader["title"].ToString(), reader["filename"].ToString());
                     count++;
                     textBox1.Text += reader["no"].ToString();
                     textBox1.Text += " : ";
                     textBox1.Text += reader["title"].ToString();
+                    textBox1.Text += " : ";
+                    textBox1.Text += reader["filename"].ToString();
                     textBox1.Text += " : ";
                     textBox1.Text += "\r\n";
                     row++;
@@ -1092,6 +1104,7 @@ namespace SQliteJPG
                 sql += "( ";
                 sql += "  no INTEGER PRIMARY KEY AUTOINCREMENT, ";
                 sql += "  title TEXT, ";
+                sql += "  filename TEXT, ";
                 sql += "  file_binary BLOB ";
                 sql += ") ";
                 cmd.CommandText = sql;
@@ -1111,9 +1124,10 @@ namespace SQliteJPG
                     byte[] file_binary_from = File.ReadAllBytes(file);
 
                     // データを挿入する
-                    sql = $" INSERT INTO sample(no,title,file_binary) VALUES (NULL,@name, @file_binary)";
+                    sql = $" INSERT INTO sample(no,title,filename,file_binary) VALUES (NULL,@name, @filename,@file_binary)";
                     cmd.CommandText = sql;
                     cmd.Parameters.Add(new SQLiteParameter("@name", textBox2.Text));
+                    cmd.Parameters.Add(new SQLiteParameter("@filename", file));
                     cmd.Parameters.Add("@file_binary", DbType.Binary).Value = file_binary_from;
                     cmd.ExecuteNonQuery();
 
