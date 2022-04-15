@@ -359,9 +359,9 @@ namespace SQliteJPG
             // 
             this.button12.Location = new System.Drawing.Point(1006, 1);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(134, 31);
+            this.button12.Size = new System.Drawing.Size(140, 31);
             this.button12.TabIndex = 26;
-            this.button12.Text = "写真名からリスト追加";
+            this.button12.Text = "写真説明からリスト追加";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 

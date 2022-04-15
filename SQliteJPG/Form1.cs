@@ -468,7 +468,7 @@ namespace SQliteJPG
 
                 dataGridView1.Columns[0].HeaderText = "行番";
                 dataGridView1.Columns[1].HeaderText = "No";
-                dataGridView1.Columns[2].HeaderText = "写真名";
+                dataGridView1.Columns[2].HeaderText = "写真説明";
                 dataGridView1.Columns[3].HeaderText = "ファイル名";
 
                 // データベースと接続する
@@ -662,7 +662,7 @@ namespace SQliteJPG
 
                 dataGridView1.Columns[0].HeaderText = "行番";
                 dataGridView1.Columns[1].HeaderText = "No";
-                dataGridView1.Columns[2].HeaderText = "写真名";
+                dataGridView1.Columns[2].HeaderText = "写真説明";
                 dataGridView1.Columns[3].HeaderText = "ファイル名";
 
                 // データベースと接続する
@@ -771,7 +771,7 @@ namespace SQliteJPG
 
                 dataGridView1.Columns[0].HeaderText = "行番";
                 dataGridView1.Columns[1].HeaderText = "No";
-                dataGridView1.Columns[2].HeaderText = "写真名";
+                dataGridView1.Columns[2].HeaderText = "写真説明";
 
                 // データベースと接続する
                 con.Open();
@@ -1370,7 +1370,7 @@ namespace SQliteJPG
 
                 dataGridView1.Columns[0].HeaderText = "行番";
                 dataGridView1.Columns[1].HeaderText = "No";
-                dataGridView1.Columns[2].HeaderText = "写真名";
+                dataGridView1.Columns[2].HeaderText = "写真説明";
 
                 // データベースと接続する
                 con.Open();
