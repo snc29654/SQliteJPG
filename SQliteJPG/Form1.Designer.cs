@@ -164,9 +164,9 @@ namespace SQliteJPG
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(505, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 15);
+            this.label1.Size = new System.Drawing.Size(55, 15);
             this.label1.TabIndex = 6;
-            this.label1.Text = "写真名";
+            this.label1.Text = "写真説明";
             // 
             // textBox3
             // 
@@ -224,7 +224,7 @@ namespace SQliteJPG
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(132, 24);
             this.button7.TabIndex = 12;
-            this.button7.Text = "写真名更新";
+            this.button7.Text = "写真説明更新";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -266,7 +266,7 @@ namespace SQliteJPG
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(132, 24);
             this.button9.TabIndex = 16;
-            this.button9.Text = "写真名あいまい検索";
+            this.button9.Text = "あいまい検索";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 

@@ -693,6 +693,7 @@ namespace SQliteJPG
 
                 string word_per = "%" + textBox4.Text + "%";
                 sql = "SELECT * FROM sample WHERE title LIKE" +
+                $" '{word_per}' OR filename LIKE"+ 
                 $" '{word_per}' ORDER BY NO ASC";
 
                 cmd.CommandText = sql;
