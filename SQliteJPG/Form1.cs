@@ -583,7 +583,10 @@ namespace SQliteJPG
 
                     dataGridView1.Rows.Add(row, reader["no"].ToString(), reader["title"].ToString(), reader["filename"].ToString());
                     dataGridView1.Columns.Add(column);
-
+                    dataGridView1.Columns[0].Width = 40;
+                    dataGridView1.Columns[1].Width = 40;
+                    dataGridView1.Columns[2].Width = 100;
+                    dataGridView1.Columns[3].Width = 200;
                     string s = reader["no"].ToString();
 
                     no_data[row] = int.Parse(s);
@@ -699,6 +702,11 @@ namespace SQliteJPG
                 while (reader.Read() == true)
                 {
                     dataGridView1.Rows.Add(row, reader["no"].ToString(), reader["title"].ToString(), reader["filename"].ToString());
+                    dataGridView1.Columns[0].Width = 40;
+                    dataGridView1.Columns[1].Width = 40;
+                    dataGridView1.Columns[2].Width = 100;
+                    dataGridView1.Columns[3].Width = 200;
+
                     count++;
                     textBox1.Text += reader["no"].ToString();
                     textBox1.Text += " : ";
@@ -800,6 +808,11 @@ namespace SQliteJPG
                 while (reader.Read() == true)
                 {
                     dataGridView1.Rows.Add(row, reader["no"].ToString(), reader["title"].ToString());
+
+                    dataGridView1.Columns[0].Width = 40;
+                    dataGridView1.Columns[1].Width = 40;
+                    dataGridView1.Columns[2].Width = 100;
+                    dataGridView1.Columns[3].Width = 200;
                     count++;
                     textBox1.Text += reader["no"].ToString();
                     textBox1.Text += " : ";
@@ -1469,6 +1482,10 @@ namespace SQliteJPG
 
                     dataGridView1.Rows.Add(row, reader["no"].ToString(), reader["title"].ToString());
                     dataGridView1.Columns.Add(column);
+                    dataGridView1.Columns[0].Width = 40;
+                    dataGridView1.Columns[1].Width = 40;
+                    dataGridView1.Columns[2].Width = 100;
+                    dataGridView1.Columns[3].Width = 200;
 
                     string s = reader["no"].ToString();
 
