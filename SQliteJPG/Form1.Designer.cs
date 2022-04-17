@@ -79,6 +79,7 @@ namespace SQliteJPG
             this.button18 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.textBox8 = new System.Windows.Forms.TextBox();
+            this.button20 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -352,7 +353,7 @@ namespace SQliteJPG
             "五郎"});
             this.listBox1.Location = new System.Drawing.Point(1006, 31);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(140, 94);
+            this.listBox1.Size = new System.Drawing.Size(140, 79);
             this.listBox1.TabIndex = 25;
             // 
             // button12
@@ -367,9 +368,9 @@ namespace SQliteJPG
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(1006, 127);
+            this.button13.Location = new System.Drawing.Point(1006, 137);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(88, 33);
+            this.button13.Size = new System.Drawing.Size(120, 24);
             this.button13.TabIndex = 27;
             this.button13.Text = "リスト削除";
             this.button13.UseVisualStyleBackColor = true;
@@ -379,7 +380,7 @@ namespace SQliteJPG
             // 
             this.button14.Location = new System.Drawing.Point(844, 1);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(141, 30);
+            this.button14.Size = new System.Drawing.Size(141, 27);
             this.button14.TabIndex = 28;
             this.button14.Text = "リストからコピー";
             this.button14.UseVisualStyleBackColor = true;
@@ -594,11 +595,22 @@ namespace SQliteJPG
             this.textBox8.TabIndex = 39;
             this.textBox8.Text = "password";
             // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(1006, 114);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(120, 24);
+            this.button20.TabIndex = 40;
+            this.button20.Text = "ファイルからリストへ";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 690);
+            this.Controls.Add(this.button20);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.button19);
             this.Controls.Add(this.button18);
@@ -720,6 +732,7 @@ namespace SQliteJPG
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Button button20;
     }
 }
 

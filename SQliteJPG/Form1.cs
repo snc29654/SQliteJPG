@@ -1563,5 +1563,33 @@ namespace SQliteJPG
             MessageBox.Show("削除完了です");
 
         }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+
+            listBox1.Items.Clear();
+            DialogResult dr = openFileDialog1.ShowDialog();
+            if (dr == System.Windows.Forms.DialogResult.OK)
+            {
+                //ファイルパスをテキストボックスに入れる
+                StreamReader ro = new StreamReader(openFileDialog1.FileName, Encoding.GetEncoding("utf-8"));
+
+                string text = ro.ReadToEnd();
+
+                text = text.Replace(Environment.NewLine, "\r");
+                text = text.Trim('\r');
+                string[] s2 = text.Split('\r');
+
+                foreach (string item in s2)
+                {
+                    listBox1.Items.Add(item);
+                }
+
+                ro.Close();
+
+            }
+
+
+        }
     }
 }
