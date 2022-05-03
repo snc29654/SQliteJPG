@@ -144,6 +144,7 @@ namespace SQliteJPG
                 Bitmap image = new Bitmap(pathname);
                 pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
                 pictureBox1.Image = image;
+                textBox4.Text = pathname;
             }
 
 
