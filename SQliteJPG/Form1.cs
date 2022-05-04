@@ -85,23 +85,25 @@ namespace SQliteJPG
                 cmd.ExecuteNonQuery();
 
                 // データを取得する
-                sql = $" SELECT * FROM sample ";
-                cmd.CommandText = sql;
-                SQLiteDataReader reader = cmd.ExecuteReader();
-                while (reader.Read() == true)
-                {
-                    textBox1.Text += reader["no"].ToString();
-                    textBox1.Text += " : ";
-                    textBox1.Text += reader["title"].ToString();
-                    textBox1.Text += " : ";
-                    textBox1.Text += reader["filename"].ToString();
-                    textBox1.Text += " : ";
-                    textBox1.Text += "\r\n";
-                    // BLOBのファイルをバイト配列に変換する
-                    byte[] file_binary_to = (byte[])reader["file_binary"];
+                /*
+                                sql = $" SELECT * FROM sample ";
+                                cmd.CommandText = sql;
+                                SQLiteDataReader reader = cmd.ExecuteReader();
+                                while (reader.Read() == true)
+                                {
+                                    textBox1.Text += reader["no"].ToString();
+                                    textBox1.Text += " : ";
+                                    textBox1.Text += reader["title"].ToString();
+                                    textBox1.Text += " : ";
+                                    textBox1.Text += reader["filename"].ToString();
+                                    textBox1.Text += " : ";
+                                    textBox1.Text += "\r\n";
+                                    // BLOBのファイルをバイト配列に変換する
+                                    byte[] file_binary_to = (byte[])reader["file_binary"];
 
-                    // ファイルに書き出す
-                }
+                                    // ファイルに書き出す
+                                }
+                */
 
 
             }
