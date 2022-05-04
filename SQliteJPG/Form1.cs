@@ -146,6 +146,7 @@ namespace SQliteJPG
                 pictureBox1.Image = image;
                 string filePath = Path.GetFileName(pathname);
                 textBox4.Text = filePath;
+                SrchJPG();
             }
 
 
@@ -744,6 +745,124 @@ namespace SQliteJPG
 
 
         }
+
+        private void SrchJPG()
+        {
+            textBox1.Clear();
+            dataGridView1.Columns.Clear();
+            dataGridView1.Rows.Clear();
+
+
+
+            // EXEの起動パスを取得する
+            string exePath = System.Windows.Forms.Application.StartupPath;
+
+            // DBフルパスを組みたてる
+            string dbFullPath = System.IO.Path.Combine(exePath, textBox7.Text);
+
+            // 接続先データベースを指定する
+            SQLiteConnection con = new SQLiteConnection(String.Format($"Data Source = {dbFullPath}"));
+
+            DataTable dt = new DataTable();
+
+            DateTime date = DateTime.Now;
+
+            string jpgname = date.ToString("yyyyMMddHHmmss");
+            dataGridView1.ColumnCount = 4;
+            try
+            {
+
+                dataGridView1.Columns[0].HeaderText = "行番";
+                dataGridView1.Columns[1].HeaderText = "No";
+                dataGridView1.Columns[2].HeaderText = "写真説明";
+                dataGridView1.Columns[3].HeaderText = "ファイル名";
+
+                // データベースと接続する
+                con.Open();
+
+                // SQLコマンドを宣言する
+                SQLiteCommand cmd = con.CreateCommand();
+
+                // テーブルを作成する
+                string sql = "";
+                sql += "CREATE TABLE IF NOT EXISTS sample ";
+                sql += "( ";
+                sql += "  no INTEGER PRIMARY KEY AUTOINCREMENT, ";
+                sql += "  title TEXT, ";
+                sql += "  filename TEXT, ";
+                sql += "  file_binary BLOB ";
+                sql += ") ";
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+
+                // データを全て削除する
+                //sql = "DELETE FROM sample ";
+                //cmd.CommandText = sql;
+                //cmd.ExecuteNonQuery();
+                // ファイルをバイト配列に変換する
+
+                // データを取得する
+
+                string word_per = "%" + textBox4.Text + "%";
+                sql = "SELECT * FROM sample WHERE title LIKE" +
+                $" '{word_per}' OR filename LIKE" +
+                $" '{word_per}' ORDER BY NO ASC";
+
+                cmd.CommandText = sql;
+                SQLiteDataReader reader = cmd.ExecuteReader();
+                int count = 0;
+                int row = 0;
+                while (reader.Read() == true)
+                {
+                    dataGridView1.Rows.Add(row, reader["no"].ToString(), reader["title"].ToString(), reader["filename"].ToString());
+                    dataGridView1.Columns[0].Width = 40;
+                    dataGridView1.Columns[1].Width = 40;
+                    dataGridView1.Columns[2].Width = 100;
+                    dataGridView1.Columns[3].Width = 200;
+
+                    count++;
+                    textBox1.Text += reader["no"].ToString();
+                    textBox1.Text += " : ";
+                    textBox1.Text += reader["title"].ToString();
+                    textBox1.Text += " : ";
+                    textBox1.Text += reader["filename"].ToString();
+                    textBox1.Text += " : ";
+                    textBox1.Text += "\r\n";
+                    row++;
+                }
+                if (count == 0)
+                {
+
+                    MessageBox.Show("DB登録未です");
+                    return;
+
+                }
+                else
+                {
+
+                    MessageBox.Show("DB登録済です");
+
+
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("DBが空です");
+                return;
+            }
+
+            finally
+            {
+                // データベースを切断する
+                con.Close();
+            }
+            con.Close();
+
+
+        }
+
+
 
         private void SrchAll_Fix()
         {
