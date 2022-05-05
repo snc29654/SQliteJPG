@@ -273,15 +273,15 @@ namespace SQliteJPG
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(332, 207);
+            this.textBox4.Location = new System.Drawing.Point(274, 220);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(73, 23);
+            this.textBox4.Size = new System.Drawing.Size(131, 23);
             this.textBox4.TabIndex = 17;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(265, 212);
+            this.label4.Location = new System.Drawing.Point(271, 202);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 15);
             this.label4.TabIndex = 18;

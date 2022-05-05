@@ -80,7 +80,9 @@ namespace SQliteJPG
                 sql = $" INSERT INTO sample(no,title,filename,file_binary) VALUES (NULL,@name, @filename,@file_binary)";
                 cmd.CommandText = sql;
                 cmd.Parameters.Add(new SQLiteParameter("@name", textBox2.Text));
-                cmd.Parameters.Add(new SQLiteParameter("@filename", pathname));
+                string filePath = Path.GetFileName(pathname);
+
+                cmd.Parameters.Add(new SQLiteParameter("@filename", filePath));
                 cmd.Parameters.Add("@file_binary", DbType.Binary).Value = file_binary_from;
                 cmd.ExecuteNonQuery();
 
@@ -1264,7 +1266,9 @@ namespace SQliteJPG
                     sql = $" INSERT INTO sample(no,title,filename,file_binary) VALUES (NULL,@name, @filename,@file_binary)";
                     cmd.CommandText = sql;
                     cmd.Parameters.Add(new SQLiteParameter("@name", textBox2.Text));
-                    cmd.Parameters.Add(new SQLiteParameter("@filename", file));
+                    string filePath = Path.GetFileName(file);
+
+                    cmd.Parameters.Add(new SQLiteParameter("@filename", filePath));
                     cmd.Parameters.Add("@file_binary", DbType.Binary).Value = file_binary_from;
                     cmd.ExecuteNonQuery();
 
