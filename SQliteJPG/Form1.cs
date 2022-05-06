@@ -641,6 +641,203 @@ namespace SQliteJPG
 
         }
 
+        private void ReadLAST()
+        {
+            textBox1.Clear();
+            dataGridView1.Columns.Clear();
+            dataGridView1.Rows.Clear();
+
+
+
+            // EXEの起動パスを取得する
+            string exePath = System.Windows.Forms.Application.StartupPath;
+
+            // DBフルパスを組みたてる
+            string dbFullPath = System.IO.Path.Combine(exePath, textBox7.Text);
+
+            // 接続先データベースを指定する
+            SQLiteConnection con = new SQLiteConnection(String.Format($"Data Source = {dbFullPath}"));
+
+            DataTable dt = new DataTable();
+
+            DateTime date = DateTime.Now;
+
+            string jpgname = date.ToString("yyyyMMddHHmmss");
+            dataGridView1.ColumnCount = 4;
+            try
+            {
+
+                dataGridView1.Columns[0].HeaderText = "行番";
+                dataGridView1.Columns[1].HeaderText = "No";
+                dataGridView1.Columns[2].HeaderText = "写真説明";
+                dataGridView1.Columns[3].HeaderText = "ファイル名";
+
+                // データベースと接続する
+                con.Open();
+
+                // SQLコマンドを宣言する
+                SQLiteCommand cmd = con.CreateCommand();
+
+                // テーブルを作成する
+                string sql = "";
+                sql += "CREATE TABLE IF NOT EXISTS sample ";
+                sql += "( ";
+                sql += "  no INTEGER PRIMARY KEY AUTOINCREMENT, ";
+                sql += "  title TEXT, ";
+                sql += "  filename TEXT, ";
+                sql += "  file_binary BLOB ";
+                sql += ") ";
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+
+                // データを全て削除する
+                //sql = "DELETE FROM sample ";
+                //cmd.CommandText = sql;
+                //cmd.ExecuteNonQuery();
+                // ファイルをバイト配列に変換する
+
+                string from_no = textBox5.Text;
+                string to_no = textBox6.Text;
+
+                // データを取得する
+                sql = $"select * from sample where no in ( select max( no ) from sample )";
+                //sql = $" SELECT * FROM sample WHERE no BETWEEN "+ from_no  + $" AND "+ to_no;
+                cmd.CommandText = sql;
+                SQLiteDataReader reader = cmd.ExecuteReader();
+                int count = 0;
+                int row = 0;
+                while (reader.Read() == true)
+                {
+
+                    byte[] file_binary_to = (byte[])reader["file_binary"];
+
+                    // ファイルに書き出す
+                    File.WriteAllBytes(@"C:\jpgtemp\" + count.ToString() + @".jpg", file_binary_to);
+
+                    System.IO.FileStream fs;
+                    fs = new System.IO.FileStream(@"C:\jpgtemp\" + count.ToString() + @".jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+
+                    //DataGridViewImageColumnの作成
+                    DataGridViewImageColumn column = new DataGridViewImageColumn();
+                    //列の名前を設定
+                    column.Name = "Image" + count.ToString();
+                    //Icon型ではなく、Image型のデータを表示する
+                    //デフォルトでFalseなので、変更する必要はない
+                    column.ValuesAreIcons = false;
+                    //値の設定されていないセルに表示するイメージを設定する
+                    column.Image = new Bitmap(System.Drawing.Image.FromStream(fs));
+                    //イメージを縦横の比率を維持して拡大、縮小表示する
+                    column.ImageLayout = DataGridViewImageCellLayout.Zoom;
+                    //イメージの説明
+                    //セルをクリップボードにコピーした時に使用される
+                    column.Description = "イメージ";
+
+
+
+                    Bitmap image = new Bitmap(System.Drawing.Image.FromStream(fs));
+
+
+                    switch (row)
+                    {
+                        case 0:
+                            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+                            pictureBox2.Image = image;
+                            break;
+                        case 1:
+                            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+                            pictureBox3.Image = image;
+                            break;
+                        case 2:
+                            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+                            pictureBox4.Image = image;
+                            break;
+                        case 3:
+                            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+                            pictureBox5.Image = image;
+                            break;
+                        case 4:
+                            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+                            pictureBox6.Image = image;
+                            break;
+                        case 5:
+                            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
+                            pictureBox7.Image = image;
+                            break;
+                        case 6:
+                            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
+                            pictureBox8.Image = image;
+                            break;
+                        case 7:
+                            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
+                            pictureBox9.Image = image;
+                            break;
+                        case 8:
+                            pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
+                            pictureBox10.Image = image;
+                            break;
+                        case 9:
+                            pictureBox11.SizeMode = PictureBoxSizeMode.Zoom;
+                            pictureBox11.Image = image;
+                            break;
+                    }
+
+
+
+                    dataGridView1.Rows.Add(row, reader["no"].ToString(), reader["title"].ToString(), reader["filename"].ToString());
+                    dataGridView1.Columns.Add(column);
+                    dataGridView1.Columns[0].Width = 40;
+                    dataGridView1.Columns[1].Width = 40;
+                    dataGridView1.Columns[2].Width = 100;
+                    dataGridView1.Columns[3].Width = 200;
+                    string s = reader["no"].ToString();
+
+                    no_data[row] = int.Parse(s);
+
+
+                    textBox1.Text += reader["no"].ToString();
+                    textBox1.Text += " : ";
+                    textBox1.Text += reader["title"].ToString();
+                    textBox1.Text += " : ";
+                    textBox1.Text += reader["filename"].ToString();
+                    textBox1.Text += " : ";
+                    textBox1.Text += "\r\n";
+
+                    fs.Close();
+
+
+
+                    count++;
+                    row++;
+                }
+
+
+                if (count == 0)
+                {
+
+                    MessageBox.Show("DBが空です");
+                    return;
+
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("DBが空です");
+                return;
+            }
+
+            finally
+            {
+                // データベースを切断する
+                con.Close();
+            }
+            con.Close();
+
+
+        }
+
+
+
         private void SrchAll()
         {
             textBox1.Clear();
@@ -1755,6 +1952,41 @@ namespace SQliteJPG
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            textBox8.Text = "password";
+            button18.Hide();
+            //button6.Show();
+            //button7.Show();
+            pictureBox1.Hide();
+            pictureBox2.Show();
+            pictureBox3.Show();
+            pictureBox4.Show();
+            pictureBox5.Show();
+            pictureBox6.Show();
+            pictureBox7.Show();
+            pictureBox8.Show();
+            pictureBox9.Show();
+            pictureBox10.Show();
+            pictureBox11.Show();
+
+
+            pictureBox2.Image = null;
+            pictureBox3.Image = null;
+            pictureBox4.Image = null;
+            pictureBox5.Image = null;
+            pictureBox6.Image = null;
+            pictureBox7.Image = null;
+            pictureBox8.Image = null;
+            pictureBox9.Image = null;
+            pictureBox10.Image = null;
+            pictureBox11.Image = null;
+
+            ReadLAST();
+
 
         }
     }

@@ -80,6 +80,7 @@ namespace SQliteJPG
             this.button19 = new System.Windows.Forms.Button();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.button20 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -96,7 +97,7 @@ namespace SQliteJPG
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(74, 114);
+            this.button1.Location = new System.Drawing.Point(74, 97);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(157, 26);
@@ -116,7 +117,7 @@ namespace SQliteJPG
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(74, 77);
+            this.button2.Location = new System.Drawing.Point(74, 67);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(157, 26);
@@ -189,7 +190,7 @@ namespace SQliteJPG
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(74, 188);
+            this.button4.Location = new System.Drawing.Point(74, 159);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(157, 26);
@@ -300,7 +301,7 @@ namespace SQliteJPG
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(74, 151);
+            this.button11.Location = new System.Drawing.Point(74, 128);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(157, 26);
             this.button11.TabIndex = 20;
@@ -606,11 +607,22 @@ namespace SQliteJPG
             this.button20.UseVisualStyleBackColor = true;
             this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(74, 190);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(156, 26);
+            this.button21.TabIndex = 41;
+            this.button21.Text = "最後のレコード";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 690);
+            this.Controls.Add(this.button21);
             this.Controls.Add(this.button20);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.button19);
@@ -734,6 +746,7 @@ namespace SQliteJPG
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button button21;
     }
 }
 
