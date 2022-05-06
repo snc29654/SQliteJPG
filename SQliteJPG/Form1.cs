@@ -1203,6 +1203,19 @@ namespace SQliteJPG
         private void button11_Click(object sender, EventArgs e)
         {
 
+            pictureBox2.Hide();
+            pictureBox3.Hide();
+            pictureBox4.Hide();
+            pictureBox5.Hide();
+            pictureBox6.Hide();
+            pictureBox7.Hide();
+            pictureBox8.Hide();
+            pictureBox9.Hide();
+            pictureBox10.Hide();
+            pictureBox11.Hide();
+
+            pictureBox1.Show();
+
 
             openFileDialog1.Filter = "JPEGファイル|*.jpg";
             DialogResult dr = openFileDialog1.ShowDialog();
@@ -1214,6 +1227,9 @@ namespace SQliteJPG
 
             files = System.IO.Directory.GetFiles(
             s3, "*.jpg", System.IO.SearchOption.AllDirectories);
+
+
+
 
             Thread t = new Thread(new ThreadStart(ManySet));
 
@@ -1283,6 +1299,13 @@ namespace SQliteJPG
                     cmd.Parameters.Add("@file_binary", DbType.Binary).Value = file_binary_from;
                     cmd.ExecuteNonQuery();
                     textBox4.Text = filePath;
+
+
+                    Bitmap image = new Bitmap(file);
+                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                    pictureBox1.Image = image;
+
+
 
                 }
 
