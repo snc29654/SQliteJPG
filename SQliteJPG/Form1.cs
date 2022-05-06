@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 using System.IO;
-
+using System.Threading;
 
 namespace SQliteJPG
 {
@@ -1198,12 +1198,10 @@ namespace SQliteJPG
 
         }
 
+        string[] files;
+
         private void button11_Click(object sender, EventArgs e)
         {
-            textBox1.Clear();
-            textBox2.Clear();
-            dataGridView1.Columns.Clear();
-            dataGridView1.Rows.Clear();
 
 
             openFileDialog1.Filter = "JPEGファイル|*.jpg";
@@ -1214,8 +1212,21 @@ namespace SQliteJPG
 
 
 
-            string[] files = System.IO.Directory.GetFiles(
+            files = System.IO.Directory.GetFiles(
             s3, "*.jpg", System.IO.SearchOption.AllDirectories);
+
+            Thread t = new Thread(new ThreadStart(ManySet));
+
+            t.Start();
+
+
+        }
+
+        private void ManySet()
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+
 
 
             // EXEの起動パスを取得する
@@ -1271,7 +1282,7 @@ namespace SQliteJPG
                     cmd.Parameters.Add(new SQLiteParameter("@filename", filePath));
                     cmd.Parameters.Add("@file_binary", DbType.Binary).Value = file_binary_from;
                     cmd.ExecuteNonQuery();
-
+                    textBox4.Text = filePath;
 
                 }
 
@@ -1288,7 +1299,7 @@ namespace SQliteJPG
                 con.Close();
             }
             con.Close();
-            ReadAll();
+            //ReadAll();
             MessageBox.Show("一括登録が完了しました");
 
         }
@@ -1716,6 +1727,11 @@ namespace SQliteJPG
 
             }
 
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
