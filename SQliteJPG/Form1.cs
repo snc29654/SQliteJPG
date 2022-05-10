@@ -1482,37 +1482,40 @@ namespace SQliteJPG
                 foreach (string file in files)
                 {
 
+                    try
+                    {
 
 
-                    byte[] file_binary_from = File.ReadAllBytes(file);
+                        byte[] file_binary_from = File.ReadAllBytes(file);
 
-                    // データを挿入する
-                    sql = $" INSERT INTO sample(no,title,filename,file_binary) VALUES (NULL,@name, @filename,@file_binary)";
-                    cmd.CommandText = sql;
-                    cmd.Parameters.Add(new SQLiteParameter("@name", textBox2.Text));
-                    string filePath = Path.GetFileName(file);
+                        // データを挿入する
+                        sql = $" INSERT INTO sample(no,title,filename,file_binary) VALUES (NULL,@name, @filename,@file_binary)";
+                        cmd.CommandText = sql;
+                        cmd.Parameters.Add(new SQLiteParameter("@name", textBox2.Text));
+                        string filePath = Path.GetFileName(file);
 
-                    cmd.Parameters.Add(new SQLiteParameter("@filename", filePath));
-                    cmd.Parameters.Add("@file_binary", DbType.Binary).Value = file_binary_from;
-                    cmd.ExecuteNonQuery();
-                    textBox4.Text = filePath;
+                        cmd.Parameters.Add(new SQLiteParameter("@filename", filePath));
+                        cmd.Parameters.Add("@file_binary", DbType.Binary).Value = file_binary_from;
+                        cmd.ExecuteNonQuery();
+                        textBox4.Text = filePath;
 
 
-                    Bitmap image = new Bitmap(file);
-                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                    pictureBox1.Image = image;
+                        Bitmap image = new Bitmap(file);
+                        pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                        pictureBox1.Image = image;
 
+
+                    }
+                    catch (Exception)
+                    {
+                        //MessageBox.Show("ファイル読み出ししてください");
+                        continue;
+                    }
 
 
                 }
 
             }
-            catch (Exception)
-            {
-                MessageBox.Show("ファイル読み出ししてください");
-                return;
-            }
-
             finally
             {
                 // データベースを切断する
