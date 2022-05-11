@@ -1527,6 +1527,100 @@ namespace SQliteJPG
 
         }
 
+        private void SlideShow()
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+
+
+
+            // EXEの起動パスを取得する
+            string exePath = System.Windows.Forms.Application.StartupPath;
+
+            // DBフルパスを組みたてる
+            string dbFullPath = System.IO.Path.Combine(exePath, textBox7.Text);
+
+            // 接続先データベースを指定する
+            SQLiteConnection con = new SQLiteConnection(String.Format($"Data Source = {dbFullPath}"));
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                // データベースと接続する
+                con.Open();
+
+                // SQLコマンドを宣言する
+                SQLiteCommand cmd = con.CreateCommand();
+
+                // テーブルを作成する
+                string sql = "";
+                sql += "CREATE TABLE IF NOT EXISTS sample ";
+                sql += "( ";
+                sql += "  no INTEGER PRIMARY KEY AUTOINCREMENT, ";
+                sql += "  title TEXT, ";
+                sql += "  filename TEXT, ";
+                sql += "  file_binary BLOB ";
+                sql += ") ";
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+
+                // データを全て削除する
+                //sql = "DELETE FROM sample ";
+                //cmd.CommandText = sql;
+                //cmd.ExecuteNonQuery();
+                // ファイルをバイト配列に変換する
+
+                foreach (string file in files)
+                {
+
+                    try
+                    {
+
+
+                        byte[] file_binary_from = File.ReadAllBytes(file);
+
+                        // データを挿入する
+                        sql = $" INSERT INTO sample(no,title,filename,file_binary) VALUES (NULL,@name, @filename,@file_binary)";
+                        cmd.CommandText = sql;
+                        cmd.Parameters.Add(new SQLiteParameter("@name", textBox2.Text));
+                        string filePath = Path.GetFileName(file);
+
+                        cmd.Parameters.Add(new SQLiteParameter("@filename", filePath));
+                        cmd.Parameters.Add("@file_binary", DbType.Binary).Value = file_binary_from;
+                        //cmd.ExecuteNonQuery();
+                        textBox4.Text = filePath;
+
+
+                        Bitmap image = new Bitmap(file);
+                        pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                        pictureBox1.Image = image;
+
+
+                    }
+                    catch (Exception)
+                    {
+                        //MessageBox.Show("ファイル読み出ししてください");
+                        continue;
+                    }
+
+
+                }
+
+            }
+            finally
+            {
+                // データベースを切断する
+                con.Close();
+            }
+            con.Close();
+            //ReadAll();
+            MessageBox.Show("プレビューが完了しました");
+
+        }
+
+
+
         private void button12_Click(object sender, EventArgs e)
         {
             listBox1.Items.Add(textBox2.Text);
@@ -1990,6 +2084,42 @@ namespace SQliteJPG
 
             ReadLAST();
 
+
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            pictureBox2.Hide();
+            pictureBox3.Hide();
+            pictureBox4.Hide();
+            pictureBox5.Hide();
+            pictureBox6.Hide();
+            pictureBox7.Hide();
+            pictureBox8.Hide();
+            pictureBox9.Hide();
+            pictureBox10.Hide();
+            pictureBox11.Hide();
+
+            pictureBox1.Show();
+
+
+            openFileDialog1.Filter = "JPEGファイル|*.jpg";
+            DialogResult dr = openFileDialog1.ShowDialog();
+
+            string s3 = "";
+            s3 = System.IO.Path.GetDirectoryName(openFileDialog1.FileName);
+
+
+
+            files = System.IO.Directory.GetFiles(
+            s3, "*.jpg", System.IO.SearchOption.AllDirectories);
+
+
+
+
+            Thread t = new Thread(new ThreadStart(SlideShow));
+
+            t.Start();
 
         }
     }
