@@ -83,6 +83,7 @@ namespace SQliteJPG
             this.button21 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
+            this.button24 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -632,19 +633,30 @@ namespace SQliteJPG
             // 
             // button23
             // 
-            this.button23.Location = new System.Drawing.Point(181, 286);
+            this.button23.Location = new System.Drawing.Point(174, 286);
             this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(68, 28);
+            this.button23.Size = new System.Drawing.Size(46, 28);
             this.button23.TabIndex = 43;
             this.button23.Text = "自動";
             this.button23.UseVisualStyleBackColor = true;
             this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
+            // button24
+            // 
+            this.button24.Location = new System.Drawing.Point(225, 286);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(43, 28);
+            this.button24.TabIndex = 44;
+            this.button24.Text = "停止";
+            this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 562);
+            this.Controls.Add(this.button24);
             this.Controls.Add(this.button23);
             this.Controls.Add(this.button22);
             this.Controls.Add(this.button21);
@@ -774,6 +786,7 @@ namespace SQliteJPG
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.Button button24;
     }
 }
 

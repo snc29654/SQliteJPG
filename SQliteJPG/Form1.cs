@@ -19,6 +19,9 @@ namespace SQliteJPG
         string dbname = "";
         int[] no_data = new int[10];
 
+        int samnale_slide_stop = 0;
+
+
         public Form1()
         {
             InitializeComponent();
@@ -2342,8 +2345,17 @@ namespace SQliteJPG
             textBox5.Text = (num + 1).ToString();
             textBox6.Text = (num + 10).ToString();
             if(button4_Click_no()==1)return;
+            if (samnale_slide_stop == 1)
+            {
+                samnale_slide_stop = 0;
+                return;
+            }
             next_ten();
         }
 
+        private void button24_Click(object sender, EventArgs e)
+        {
+            samnale_slide_stop = 1;
+        }
     }
 }
