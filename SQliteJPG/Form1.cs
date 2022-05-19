@@ -1780,6 +1780,12 @@ namespace SQliteJPG
 
                 foreach (string file in files)
                 {
+                    if (samnale_slide_stop == 1)
+                    {
+                        samnale_slide_stop = 0;
+                        return;
+                    }
+
 
                     try
                     {
@@ -2356,6 +2362,12 @@ namespace SQliteJPG
         private void button24_Click(object sender, EventArgs e)
         {
             samnale_slide_stop = 1;
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            samnale_slide_stop = 1;
+
         }
     }
 }
