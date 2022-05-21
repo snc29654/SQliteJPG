@@ -2392,22 +2392,39 @@ namespace SQliteJPG
 
         private void button26_Click_L(object sender, EventArgs e)
         {
-
+            /*
             using (Mat mat = new Mat(@"C:\jpgtemp\jpgtempL.jpg"))
             {
                 // 画像をウィンドウに表示
                 Cv2.ImShow("sample_show", mat);
             }
+            */
+            System.IO.FileStream fs;
+            fs = new System.IO.FileStream(@"C:\jpgtemp\jpgtempL.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.Image = System.Drawing.Image.FromStream(fs);
+            fs.Close();
+
+
+
         }
 
         private void button26_Click_R(object sender, EventArgs e)
         {
-
+            /*
             using (Mat mat = new Mat(@"C:\jpgtemp\jpgtempR.jpg"))
             {
                 // 画像をウィンドウに表示
                 Cv2.ImShow("sample_show", mat);
             }
+            */
+            System.IO.FileStream fs;
+            fs = new System.IO.FileStream(@"C:\jpgtemp\jpgtempR.jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.Image = System.Drawing.Image.FromStream(fs);
+            fs.Close();
+
+
         }
 
 
