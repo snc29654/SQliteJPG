@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Data.SQLite;
 using System.IO;
 using System.Threading;
+using OpenCvSharp;
+
 
 namespace SQliteJPG
 {
@@ -316,7 +318,8 @@ namespace SQliteJPG
 
             DateTime date = DateTime.Now;
 
-            string jpgname = date.ToString("yyyyMMddHHmmss");
+            //string jpgname = date.ToString("yyyyMMddHHmmss");
+            string jpgname = "jpgtemp";
             try
             {
                 // データベースと接続する
@@ -2368,6 +2371,17 @@ namespace SQliteJPG
         {
             samnale_slide_stop = 1;
 
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            // 画像の読み込み
+            using (Mat mat = new Mat(@"C:\jpgtemp\jpgtemp.jpg"))
+        
+            {
+                // 画像をウィンドウに表示
+                Cv2.ImShow("原寸表示", mat);
+            }
         }
     }
 }
