@@ -2381,12 +2381,12 @@ namespace SQliteJPG
             using (Mat mat = new Mat(@"C:\jpgtemp\jpgtemp.jpg"))
 
 
-            mat2 = mat.Clone(new Rect(400, 400, 800, 600));
+            mat2 = mat.Clone(new Rect(int.Parse(textBox9.Text), int.Parse(textBox10.Text), int.Parse(textBox11.Text), int.Parse(textBox12.Text)));
             Cv2.ImWrite(@"C:\jpgtemp\jpgtemp2.jpg", mat2);
 
             {
                 // 画像をウィンドウに表示
-                Cv2.ImShow("原寸表示", mat2);
+                Cv2.ImShow("切り出し", mat2);
             }
         }
     }

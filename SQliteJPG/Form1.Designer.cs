@@ -86,6 +86,10 @@ namespace SQliteJPG
             this.button24 = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -152,7 +156,7 @@ namespace SQliteJPG
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox2.Size = new System.Drawing.Size(480, 130);
+            this.textBox2.Size = new System.Drawing.Size(480, 96);
             this.textBox2.TabIndex = 4;
             // 
             // button3
@@ -576,7 +580,7 @@ namespace SQliteJPG
             this.button18.Location = new System.Drawing.Point(426, 151);
             this.button18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(72, 25);
+            this.button18.Size = new System.Drawing.Size(72, 21);
             this.button18.TabIndex = 37;
             this.button18.Text = "戻る";
             this.button18.UseVisualStyleBackColor = true;
@@ -673,11 +677,47 @@ namespace SQliteJPG
             this.button26.UseVisualStyleBackColor = true;
             this.button26.Click += new System.EventHandler(this.button26_Click);
             // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(517, 128);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(34, 23);
+            this.textBox9.TabIndex = 47;
+            this.textBox9.Text = "200";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(553, 128);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(34, 23);
+            this.textBox10.TabIndex = 48;
+            this.textBox10.Text = "200";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(606, 128);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(34, 23);
+            this.textBox11.TabIndex = 49;
+            this.textBox11.Text = "800";
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(643, 128);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(34, 23);
+            this.textBox12.TabIndex = 50;
+            this.textBox12.Text = "600";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 710);
+            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.textBox9);
             this.Controls.Add(this.button26);
             this.Controls.Add(this.button25);
             this.Controls.Add(this.button24);
@@ -813,6 +853,10 @@ namespace SQliteJPG
         private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBox12;
     }
 }
 
