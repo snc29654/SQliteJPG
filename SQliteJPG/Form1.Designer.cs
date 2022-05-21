@@ -669,7 +669,7 @@ namespace SQliteJPG
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(73, 21);
             this.button26.TabIndex = 46;
-            this.button26.Text = "原寸表示";
+            this.button26.Text = "切り出し";
             this.button26.UseVisualStyleBackColor = true;
             this.button26.Click += new System.EventHandler(this.button26_Click);
             // 

@@ -2375,12 +2375,18 @@ namespace SQliteJPG
 
         private void button26_Click(object sender, EventArgs e)
         {
+            Mat mat2;
+
             // 画像の読み込み
             using (Mat mat = new Mat(@"C:\jpgtemp\jpgtemp.jpg"))
-        
+
+
+            mat2 = mat.Clone(new Rect(400, 400, 800, 600));
+            Cv2.ImWrite(@"C:\jpgtemp\jpgtemp2.jpg", mat2);
+
             {
                 // 画像をウィンドウに表示
-                Cv2.ImShow("原寸表示", mat);
+                Cv2.ImShow("原寸表示", mat2);
             }
         }
     }
