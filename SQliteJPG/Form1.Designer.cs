@@ -90,6 +90,8 @@ namespace SQliteJPG
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
+            this.button27 = new System.Windows.Forms.Button();
+            this.button28 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -709,11 +711,33 @@ namespace SQliteJPG
             this.textBox12.TabIndex = 50;
             this.textBox12.Text = "600";
             // 
+            // button27
+            // 
+            this.button27.Location = new System.Drawing.Point(769, 128);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(60, 23);
+            this.button27.TabIndex = 51;
+            this.button27.Text = "右回転";
+            this.button27.UseVisualStyleBackColor = true;
+            this.button27.Click += new System.EventHandler(this.button27_Click);
+            // 
+            // button28
+            // 
+            this.button28.Location = new System.Drawing.Point(704, 127);
+            this.button28.Name = "button28";
+            this.button28.Size = new System.Drawing.Size(51, 26);
+            this.button28.TabIndex = 52;
+            this.button28.Text = "左回転";
+            this.button28.UseVisualStyleBackColor = true;
+            this.button28.Click += new System.EventHandler(this.button28_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 710);
+            this.Controls.Add(this.button28);
+            this.Controls.Add(this.button27);
             this.Controls.Add(this.textBox12);
             this.Controls.Add(this.textBox11);
             this.Controls.Add(this.textBox10);
@@ -857,6 +881,8 @@ namespace SQliteJPG
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.Button button27;
+        private System.Windows.Forms.Button button28;
     }
 }
 

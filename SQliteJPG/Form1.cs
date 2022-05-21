@@ -2389,5 +2389,73 @@ namespace SQliteJPG
                 Cv2.ImShow("切り出し", mat2);
             }
         }
+
+        private void button26_Click_L(object sender, EventArgs e)
+        {
+
+            using (Mat mat = new Mat(@"C:\jpgtemp\jpgtempL.jpg"))
+            {
+                // 画像をウィンドウに表示
+                Cv2.ImShow("sample_show", mat);
+            }
+        }
+
+        private void button26_Click_R(object sender, EventArgs e)
+        {
+
+            using (Mat mat = new Mat(@"C:\jpgtemp\jpgtempR.jpg"))
+            {
+                // 画像をウィンドウに表示
+                Cv2.ImShow("sample_show", mat);
+            }
+        }
+
+
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            Mat src = Cv2.ImRead(@"C:\jpgtemp\jpgtemp.jpg");
+
+            RotateAndResize(src, out Mat dest_L, false);
+            Cv2.ImWrite(@"C:\jpgtemp\jpgtempL.jpg", dest_L);
+
+            RotateAndResize(src, out Mat dest_R, true);
+            Cv2.ImWrite(@"C:\jpgtemp\jpgtempR.jpg", dest_R);
+
+
+            button26_Click_R(sender, e);
+        }
+
+
+        public static void RotateAndResize(Mat src, out Mat dest, bool isRight/*左倒しが基本*/)
+        {
+            dest = new Mat();
+
+            // 本当は大きい辺に合わせるが横長画像と仮定する
+            var center = new Point2f(src.Cols / 2, src.Cols / 2);
+
+            Mat rMat = Cv2.GetRotationMatrix2D(center, 90, 1);
+            Cv2.WarpAffine(src, dest, rMat, dest.Size());
+
+            if (isRight)
+            {
+                Cv2.Flip(dest, dest, FlipMode.XY);
+            }
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            Mat src = Cv2.ImRead(@"C:\jpgtemp\jpgtemp.jpg");
+
+            RotateAndResize(src, out Mat dest_L, false);
+            Cv2.ImWrite(@"C:\jpgtemp\jpgtempL.jpg", dest_L);
+
+            RotateAndResize(src, out Mat dest_R, true);
+            Cv2.ImWrite(@"C:\jpgtemp\jpgtempR.jpg", dest_R);
+
+
+            button26_Click_L(sender, e);
+
+        }
     }
 }
