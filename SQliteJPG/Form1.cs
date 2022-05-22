@@ -2382,17 +2382,28 @@ namespace SQliteJPG
         {
             Mat mat2;
 
-            // 画像の読み込み
-            using (Mat mat = new Mat(@"C:\jpgtemp\jpgtemp.jpg"))
-
-
-            mat2 = mat.Clone(new Rect(int.Parse(textBox9.Text), int.Parse(textBox10.Text), int.Parse(textBox11.Text), int.Parse(textBox12.Text)));
-            Cv2.ImWrite(@"C:\jpgtemp\jpgtemp2.jpg", mat2);
-
+            try
             {
-                // 画像をウィンドウに表示
-                Cv2.ImShow("切り出し", mat2);
+
+
+                // 画像の読み込み
+                using (Mat mat = new Mat(@"C:\jpgtemp\jpgtemp.jpg"))
+
+
+                    mat2 = mat.Clone(new Rect(int.Parse(textBox9.Text), int.Parse(textBox10.Text), int.Parse(textBox11.Text), int.Parse(textBox12.Text)));
+                Cv2.ImWrite(@"C:\jpgtemp\jpgtemp2.jpg", mat2);
+
+                {
+                    // 画像をウィンドウに表示
+                    Cv2.ImShow("切り出し", mat2);
+                }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("範囲を見直してください");
+            }
+
+
         }
 
         private void button26_Click_L(object sender, EventArgs e)
