@@ -30,6 +30,11 @@ namespace SQliteJPG
             makedir();
             ReadAll();
             button18.Hide();
+            pictureBox1.MouseDown += pictureBox1_MouseDown;
+            pictureBox1_MouseDown(pictureBox1, new MouseEventArgs(MouseButtons.None, 0, 0, 0, 0));
+
+            pictureBox1.MouseUp += pictureBox1_MouseUp;
+            pictureBox1_MouseUp(pictureBox1, new MouseEventArgs(MouseButtons.None, 0, 0, 0, 0));
 
 
         }
@@ -2474,5 +2479,32 @@ namespace SQliteJPG
             button26_Click_L(sender, e);
 
         }
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            //MessageBox.Show("MouseDown");
+
+            int xCoordinate = e.X*5;
+            int yCoordinate = e.Y*5;
+
+            textBox9.Text = xCoordinate.ToString();
+            textBox10.Text = yCoordinate.ToString();
+ 
+        
+        }
+        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+
+            //MessageBox.Show("MouseDown");
+
+            int xCoordinate = e.X*5;
+            int yCoordinate = e.Y*5;
+
+            textBox11.Text = xCoordinate.ToString();
+            textBox12.Text = yCoordinate.ToString();
+
+
+        }
+
     }
 }
