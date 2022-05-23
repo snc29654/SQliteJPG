@@ -2503,8 +2503,8 @@ namespace SQliteJPG
 
             //MessageBox.Show("MouseDown");
 
-            int xCoordinate = e.X*5;
-            int yCoordinate = e.Y*5;
+            int xCoordinate = e.X * int.Parse(textBox13.Text);
+            int yCoordinate = e.Y * int.Parse(textBox14.Text);
 
             textBox9.Text = xCoordinate.ToString();
             textBox10.Text = yCoordinate.ToString();
@@ -2516,8 +2516,8 @@ namespace SQliteJPG
 
             //MessageBox.Show("MouseDown");
 
-            int xCoordinate = e.X*5;
-            int yCoordinate = e.Y*5;
+            int xCoordinate = e.X * int.Parse(textBox13.Text);
+            int yCoordinate = e.Y * int.Parse(textBox14.Text);
 
             textBox11.Text = xCoordinate.ToString();
             textBox12.Text = yCoordinate.ToString();

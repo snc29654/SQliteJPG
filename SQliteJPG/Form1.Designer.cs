@@ -92,6 +92,11 @@ namespace SQliteJPG
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.button27 = new System.Windows.Forms.Button();
             this.button28 = new System.Windows.Forms.Button();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -713,7 +718,7 @@ namespace SQliteJPG
             // 
             // button27
             // 
-            this.button27.Location = new System.Drawing.Point(769, 128);
+            this.button27.Location = new System.Drawing.Point(925, 133);
             this.button27.Name = "button27";
             this.button27.Size = new System.Drawing.Size(60, 23);
             this.button27.TabIndex = 51;
@@ -723,7 +728,7 @@ namespace SQliteJPG
             // 
             // button28
             // 
-            this.button28.Location = new System.Drawing.Point(704, 127);
+            this.button28.Location = new System.Drawing.Point(860, 132);
             this.button28.Name = "button28";
             this.button28.Size = new System.Drawing.Size(51, 26);
             this.button28.TabIndex = 52;
@@ -731,11 +736,59 @@ namespace SQliteJPG
             this.button28.UseVisualStyleBackColor = true;
             this.button28.Click += new System.EventHandler(this.button28_Click);
             // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(774, 128);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(31, 23);
+            this.textBox13.TabIndex = 53;
+            this.textBox13.Text = "5";
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(774, 151);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(31, 23);
+            this.textBox14.TabIndex = 54;
+            this.textBox14.Text = "5";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(730, 134);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(38, 15);
+            this.label8.TabIndex = 55;
+            this.label8.Text = "X倍率";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(730, 154);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(38, 15);
+            this.label9.TabIndex = 56;
+            this.label9.Text = "Y倍率";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(683, 143);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(47, 15);
+            this.label10.TabIndex = 57;
+            this.label10.Text = "切り出し";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 710);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.textBox14);
+            this.Controls.Add(this.textBox13);
             this.Controls.Add(this.button28);
             this.Controls.Add(this.button27);
             this.Controls.Add(this.textBox12);
@@ -883,6 +936,11 @@ namespace SQliteJPG
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Button button27;
         private System.Windows.Forms.Button button28;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }
 
