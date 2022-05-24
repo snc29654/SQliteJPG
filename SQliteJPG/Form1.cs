@@ -11,7 +11,7 @@ using System.Data.SQLite;
 using System.IO;
 using System.Threading;
 using OpenCvSharp;
-
+using System.Diagnostics;
 
 namespace SQliteJPG
 {
@@ -174,7 +174,7 @@ namespace SQliteJPG
             textBox1.Clear();
             //画像のクリア
 
-            
+
 
             pictureBox2.Hide();
             pictureBox3.Hide();
@@ -202,7 +202,7 @@ namespace SQliteJPG
 
             DateTime date = DateTime.Now;
 
-            string jpgname= date.ToString("yyyyMMddHHmmss");
+            string jpgname = date.ToString("yyyyMMddHHmmss");
             try
             {
                 // データベースと接続する
@@ -249,7 +249,7 @@ namespace SQliteJPG
                     byte[] file_binary_to = (byte[])reader["file_binary"];
 
                     // ファイルに書き出す
-                    File.WriteAllBytes(@"C:\jpgtemp\"+ jpgname + @".jpg", file_binary_to);
+                    File.WriteAllBytes(@"C:\jpgtemp\" + jpgname + @".jpg", file_binary_to);
                 }
                 if (count == 0)
                 {
@@ -428,7 +428,7 @@ namespace SQliteJPG
             pictureBox11.Show();
 
 
-            pictureBox2.Image=null;
+            pictureBox2.Image = null;
             pictureBox3.Image = null;
             pictureBox4.Image = null;
             pictureBox5.Image = null;
@@ -554,7 +554,7 @@ namespace SQliteJPG
                 string to_no = textBox6.Text;
 
                 // データを取得する
-                sql = $" SELECT * FROM sample WHERE no BETWEEN "+ from_no  + $" AND "+ to_no;
+                sql = $" SELECT * FROM sample WHERE no BETWEEN " + from_no + $" AND " + to_no;
                 cmd.CommandText = sql;
                 SQLiteDataReader reader = cmd.ExecuteReader();
                 int count = 0;
@@ -568,12 +568,12 @@ namespace SQliteJPG
                     File.WriteAllBytes(@"C:\jpgtemp\" + count.ToString() + @".jpg", file_binary_to);
 
                     System.IO.FileStream fs;
-                    fs = new System.IO.FileStream(@"C:\jpgtemp\" +count.ToString() + @".jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                    fs = new System.IO.FileStream(@"C:\jpgtemp\" + count.ToString() + @".jpg", System.IO.FileMode.Open, System.IO.FileAccess.Read);
 
                     //DataGridViewImageColumnの作成
                     DataGridViewImageColumn column = new DataGridViewImageColumn();
                     //列の名前を設定
-                    column.Name = "Image"+count.ToString();
+                    column.Name = "Image" + count.ToString();
                     //Icon型ではなく、Image型のデータを表示する
                     //デフォルトでFalseなので、変更する必要はない
                     column.ValuesAreIcons = false;
@@ -1112,7 +1112,7 @@ namespace SQliteJPG
 
                 string word_per = "%" + textBox4.Text + "%";
                 sql = "SELECT * FROM sample WHERE title LIKE" +
-                $" '{word_per}' OR filename LIKE"+ 
+                $" '{word_per}' OR filename LIKE" +
                 $" '{word_per}' ORDER BY NO ASC";
 
                 cmd.CommandText = sql;
@@ -1602,7 +1602,7 @@ namespace SQliteJPG
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            button3_Click(sender,e);
+            button3_Click(sender, e);
         }
 
         private void dataGridView1_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
@@ -1850,7 +1850,7 @@ namespace SQliteJPG
 
         private void button13_Click(object sender, EventArgs e)
         {
-            try 
+            try
             {
                 int sel = listBox1.SelectedIndex;
                 listBox1.Items.RemoveAt(sel);
@@ -1927,8 +1927,8 @@ namespace SQliteJPG
         {
             int num = int.Parse(textBox5.Text);
 
-            textBox5.Text = (num -10).ToString();
-            textBox6.Text = (num -1).ToString();
+            textBox5.Text = (num - 10).ToString();
+            textBox6.Text = (num - 1).ToString();
             button4_Click(sender, e);
 
         }
@@ -2006,7 +2006,8 @@ namespace SQliteJPG
 
         private void button18_Click(object sender, EventArgs e)
         {
-            button4_Click(sender, e);        }
+            button4_Click(sender, e);
+        }
 
         private void button19_Click(object sender, EventArgs e)
         {
@@ -2358,7 +2359,7 @@ namespace SQliteJPG
 
             textBox5.Text = (num + 1).ToString();
             textBox6.Text = (num + 10).ToString();
-            if(button4_Click_no()==1)return;
+            if (button4_Click_no() == 1) return;
             if (samnale_slide_stop == 1)
             {
                 samnale_slide_stop = 0;
@@ -2508,8 +2509,8 @@ namespace SQliteJPG
 
             textBox9.Text = xCoordinate.ToString();
             textBox10.Text = yCoordinate.ToString();
- 
-        
+
+
         }
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
@@ -2525,5 +2526,12 @@ namespace SQliteJPG
 
         }
 
+        private void button29_Click(object sender, EventArgs e)
+        {
+
+            System.Diagnostics.Process.Start(@"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
+                                "C:\\github\\html_link\\test.html");
+        }
     }
+
 }

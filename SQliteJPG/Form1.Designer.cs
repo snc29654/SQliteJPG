@@ -97,6 +97,7 @@ namespace SQliteJPG
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.button29 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -779,11 +780,22 @@ namespace SQliteJPG
             this.label10.TabIndex = 57;
             this.label10.Text = "切り出し";
             // 
+            // button29
+            // 
+            this.button29.Location = new System.Drawing.Point(428, 675);
+            this.button29.Name = "button29";
+            this.button29.Size = new System.Drawing.Size(77, 26);
+            this.button29.TabIndex = 58;
+            this.button29.Text = "button29";
+            this.button29.UseVisualStyleBackColor = true;
+            this.button29.Click += new System.EventHandler(this.button29_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 710);
+            this.Controls.Add(this.button29);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -941,6 +953,7 @@ namespace SQliteJPG
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button29;
     }
 }
 
