@@ -784,9 +784,9 @@ namespace SQliteJPG
             // 
             this.button29.Location = new System.Drawing.Point(428, 675);
             this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(77, 26);
+            this.button29.Size = new System.Drawing.Size(98, 26);
             this.button29.TabIndex = 58;
-            this.button29.Text = "button29";
+            this.button29.Text = "画像web表示";
             this.button29.UseVisualStyleBackColor = true;
             this.button29.Click += new System.EventHandler(this.button29_Click);
             // 
