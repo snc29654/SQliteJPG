@@ -102,6 +102,7 @@ namespace SQliteJPG
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.button30 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -828,11 +829,22 @@ namespace SQliteJPG
             this.label12.TabIndex = 62;
             this.label12.Text = "height";
             // 
+            // button30
+            // 
+            this.button30.Location = new System.Drawing.Point(809, 676);
+            this.button30.Name = "button30";
+            this.button30.Size = new System.Drawing.Size(102, 25);
+            this.button30.TabIndex = 63;
+            this.button30.Text = "webスライドショー";
+            this.button30.UseVisualStyleBackColor = true;
+            this.button30.Click += new System.EventHandler(this.button30_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 710);
+            this.Controls.Add(this.button30);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textBox16);
@@ -1000,6 +1012,7 @@ namespace SQliteJPG
         private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button30;
     }
 }
 
