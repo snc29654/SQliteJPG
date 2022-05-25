@@ -98,7 +98,6 @@ namespace SQliteJPG
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.button29 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -791,21 +790,11 @@ namespace SQliteJPG
             this.button29.UseVisualStyleBackColor = true;
             this.button29.Click += new System.EventHandler(this.button29_Click);
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(561, 680);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(281, 15);
-            this.label11.TabIndex = 59;
-            this.label11.Text = "C:\\github\\html_link\\test.htmlを事前に作成してください";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 710);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.button29);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -965,7 +954,6 @@ namespace SQliteJPG
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button29;
-        private System.Windows.Forms.Label label11;
     }
 }
 

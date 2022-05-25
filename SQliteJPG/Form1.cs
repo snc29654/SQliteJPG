@@ -493,8 +493,79 @@ namespace SQliteJPG
                 MessageBox.Show("C:jpgtempを作成しました");
             }
 
+            path = @"C:\html_link";
+
+            if (Directory.Exists(path))
+            {
+            }
+            else
+            {
+                Directory.CreateDirectory(path);
+                Writehtml();
+                MessageBox.Show("C:html_linkを作成しました");
+            }
 
         }
+
+        private void Writehtml()
+        {
+            //ファイル名
+            var fileName = @"C:\html_link\test.html";
+
+
+            //書き込むテキスト
+            var days = new string[] {
+                "<!DOCTYPE html>\n",
+                "<html>\n",
+                "<head>\n",
+                "<title> 画像表示 </title>\n",
+                "</head>\n",
+                "<body>\n",
+                "<h1>画像表示</h1>\n",
+                "<h2>jpg0</h2>\n",
+                "<img src='C:/jpgtemp/0.jpg'>\n",
+                "<h2>jpg1</h2>\n",
+                "<img src='C:/jpgtemp/1.jpg'>\n",
+                "<h2>jpg2</h2>\n",
+                "<img src='C:/jpgtemp/2.jpg'>\n",
+                "<h2>jpg3</h2>\n",
+                "<img src='C:/jpgtemp/3.jpg'>\n",
+                "<h2>jpg4</h2>\n",
+                "<img src='C:/jpgtemp/4.jpg'>\n",
+                "<h2>jpg5</h2>\n",
+                "<img src='C:/jpgtemp/5.jpg'>\n",
+                "<h2>jpg6</h2>\n",
+                "<img src='C:/jpgtemp/6.jpg'>\n",
+                "<h2>jpg7</h2>\n",
+                "<img src='C:/jpgtemp/7.jpg'>\n",
+                "<h2>jpg8</h2>\n",
+                "<img src='C:/jpgtemp/8.jpg'>\n",
+                "<h2>jpg9</h2>\n",
+                "<img src='C:/jpgtemp/9.jpg'>\n",
+                "</body>\n",
+                "</html>\n"
+            };
+
+            try
+            {
+                //ファイルをオープンする
+                using (StreamWriter sw = new StreamWriter(fileName, false, Encoding.GetEncoding("utf-8")))
+                {
+                    foreach (var day in days)
+                    {
+                        //テキストを書き込む
+                        sw.Write(day);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+
         private void ReadAll()
         {
             textBox1.Clear();
@@ -2530,7 +2601,7 @@ namespace SQliteJPG
         {
 
             System.Diagnostics.Process.Start(@"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
-                                "C:\\github\\html_link\\test.html");
+                                "C:\\html_link\\test.html");
         }
     }
 
