@@ -501,7 +501,6 @@ namespace SQliteJPG
             else
             {
                 Directory.CreateDirectory(path);
-                Writehtml();
                 MessageBox.Show("C:html_linkを作成しました");
             }
 
@@ -523,25 +522,25 @@ namespace SQliteJPG
                 "<body>\n",
                 "<h1>画像表示</h1>\n",
                 "<h2>jpg0</h2>\n",
-                "<img src='C:/jpgtemp/0.jpg'>\n",
+                "<img src='C:/jpgtemp/0.jpg' width="+textBox15.Text+" height="+textBox16.Text+">\n",
                 "<h2>jpg1</h2>\n",
-                "<img src='C:/jpgtemp/1.jpg'>\n",
+                "<img src='C:/jpgtemp/1.jpg' width="+textBox15.Text+" height="+textBox16.Text+">\n",
                 "<h2>jpg2</h2>\n",
-                "<img src='C:/jpgtemp/2.jpg'>\n",
+                "<img src='C:/jpgtemp/2.jpg' width="+textBox15.Text+" height="+textBox16.Text+">\n",
                 "<h2>jpg3</h2>\n",
-                "<img src='C:/jpgtemp/3.jpg'>\n",
+                "<img src='C:/jpgtemp/3.jpg' width="+textBox15.Text+" height="+textBox16.Text+">\n",
                 "<h2>jpg4</h2>\n",
-                "<img src='C:/jpgtemp/4.jpg'>\n",
+                "<img src='C:/jpgtemp/4.jpg' width="+textBox15.Text+" height="+textBox16.Text+">\n",
                 "<h2>jpg5</h2>\n",
-                "<img src='C:/jpgtemp/5.jpg'>\n",
+                "<img src='C:/jpgtemp/5.jpg' width="+textBox15.Text+" height="+textBox16.Text+">\n",
                 "<h2>jpg6</h2>\n",
-                "<img src='C:/jpgtemp/6.jpg'>\n",
+                "<img src='C:/jpgtemp/6.jpg' width="+textBox15.Text+" height="+textBox16.Text+">\n",
                 "<h2>jpg7</h2>\n",
-                "<img src='C:/jpgtemp/7.jpg'>\n",
+                "<img src='C:/jpgtemp/7.jpg' width="+textBox15.Text+" height="+textBox16.Text+">\n",
                 "<h2>jpg8</h2>\n",
-                "<img src='C:/jpgtemp/8.jpg'>\n",
+                "<img src='C:/jpgtemp/8.jpg' width="+textBox15.Text+" height="+textBox16.Text+">\n",
                 "<h2>jpg9</h2>\n",
-                "<img src='C:/jpgtemp/9.jpg'>\n",
+                "<img src='C:/jpgtemp/9.jpg' width="+textBox15.Text+" height="+textBox16.Text+">\n",
                 "</body>\n",
                 "</html>\n"
             };
@@ -2599,6 +2598,7 @@ namespace SQliteJPG
 
         private void button29_Click(object sender, EventArgs e)
         {
+            Writehtml();
 
             System.Diagnostics.Process.Start(@"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
                                 "C:\\html_link\\test.html");
